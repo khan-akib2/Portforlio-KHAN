@@ -1,6 +1,10 @@
+'use client';
+
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-16 sm:pt-20 px-4 sm:px-6 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-25 sm:pt-20 px-4 sm:px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-6 sm:gap-12 w-full items-center z-10">
         <div className="lg:col-span-7">
           <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
@@ -37,73 +41,74 @@ export default function Hero() {
                 href="https://github.com/khan-akib2"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs sm:text-sm font-bold border-b-2 border-indigo-500/30 hover:border-indigo-500 transition-all pb-1"
+                className="text-2xl text-slate-400 hover:text-indigo-500 transition-colors"
+                title="GitHub"
               >
-                Github
+                <FaGithub />
               </a>
               <a
                 href="https://www.linkedin.com/in/ramzan-khan-81a797379/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs sm:text-sm font-bold border-b-2 border-indigo-500/30 hover:border-indigo-500 transition-all pb-1"
+                className="text-2xl text-slate-400 hover:text-indigo-500 transition-colors"
+                title="LinkedIn"
               >
-                LinkedIn
+                <FaLinkedin />
+              </a>
+              <a
+                href="https://www.instagram.com/khan_akib2/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl text-slate-400 hover:text-indigo-500 transition-colors"
+                title="Instagram"
+              >
+                <FaInstagram />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="hidden md:flex lg:col-span-5 relative h-[300px] md:h-[400px] lg:h-[500px] items-center justify-center">
-          <div className="relative w-full h-full">
-            <div className="hive-node absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-[2.5rem] bg-indigo-600 flex items-center justify-center shadow-2xl z-20">
-              <span className="text-white font-black text-2xl">CORE</span>
+        <div className="lg:col-span-5 relative flex items-center justify-center mt-12 lg:mt-0">
+          <div className="relative">
+            {/* Minimal outer glow */}
+            <div className="absolute -inset-3 bg-gradient-to-r from-indigo-600/10 via-purple-600/10 to-indigo-600/10 rounded-[3rem]" style={{filter: 'blur(25px)'}}></div>
+            
+            {/* Main image container */}
+            <div className="relative w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-[28rem] lg:w-96 lg:h-[32rem] rounded-[2.5rem] overflow-hidden bg-slate-900 border border-indigo-500/40 shadow-xl shadow-indigo-500/20 animate-image-float">
+              {/* Image placeholder */}
+              <img 
+                src="HANDSOMEEEE.jpg" 
+                alt="Ramzan Khan" 
+                className="w-full h-full object-cover grayscale animate-shimmer"
+              />
+              
+              {/* Animated gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-indigo-950/20"></div>
+              
+              {/* Top-left corner accent - animated */}
+              <div className="absolute top-4 left-4 w-3 h-3 border-t-2 border-l-2 border-indigo-400/80 animate-corner-expand"></div>
+              <div className="absolute top-6 left-6 w-12 h-12 border-t-2 border-l-2 border-indigo-500/30"></div>
+              
+              {/* Bottom-right corner accent - animated */}
+              <div className="absolute bottom-4 right-4 w-3 h-3 border-b-2 border-r-2 border-indigo-400/80 animate-corner-expand" style={{animationDelay: '0.5s'}}></div>
+              <div className="absolute bottom-6 right-6 w-12 h-12 border-b-2 border-r-2 border-indigo-500/30"></div>
+              
+              {/* Animated accent lines */}
+              <div className="absolute top-1/3 left-0 h-px w-full bg-gradient-to-r from-transparent via-indigo-500/30 to-transparent animate-accent-line" style={{animationDelay: '0s'}}></div>
+              <div className="absolute bottom-1/3 right-0 h-px w-1/2 bg-gradient-to-l from-transparent via-purple-500/30 to-transparent animate-accent-line" style={{animationDelay: '0.8s'}}></div>
+              
+              {/* Designation text - styled like project cards */}
+              <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8">
+                <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-[0.3em] text-indigo-400">
+                  Developer
+                </span>
+                <h3 className="text-lg sm:text-2xl font-bold mt-1 uppercase italic">Full Stack</h3>
+              </div>
             </div>
-
-            <div
-              className="hive-node absolute top-10 right-10 p-6 rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 shadow-xl"
-              style={{ animationDelay: '-1s' }}
-            >
-              <span className="text-xs font-bold tracking-widest opacity-70">REACT</span>
-            </div>
-
-            <div
-              className="hive-node absolute bottom-20 left-0 p-6 rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 shadow-xl"
-              style={{ animationDelay: '-2s' }}
-            >
-              <span className="text-xs font-bold tracking-widest opacity-70">NODE.JS</span>
-            </div>
-
-            <div
-              className="hive-node absolute top-40 left-10 p-5 rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 shadow-xl"
-              style={{ animationDelay: '-3s' }}
-            >
-              <span className="text-xs font-bold tracking-widest opacity-70">FIGMA</span>
-            </div>
-
-            <div
-              className="hive-node absolute bottom-10 right-20 p-5 rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 shadow-xl"
-              style={{ animationDelay: '-4s' }}
-            >
-              <span className="text-xs font-bold tracking-widest opacity-70">PYTHON</span>
-            </div>
-
-            <div
-              className="hive-node absolute top-0 left-1/2 p-4 rounded-2xl bg-indigo-500/10 border border-indigo-500/20"
-              style={{ animationDelay: '-5s' }}
-            >
-              <span className="text-[10px] font-black text-indigo-500">AIML</span>
-            </div>
-
-            <svg className="absolute inset-0 w-full h-full opacity-10 pointer-events-none">
-              <line x1="50%" y1="50%" x2="80%" y2="20%" stroke="currentColor" />
-              <line x1="50%" y1="50%" x2="20%" y2="80%" stroke="currentColor" />
-              <line x1="50%" y1="50%" x2="10%" y2="40%" stroke="currentColor" />
-              <line x1="50%" y1="50%" x2="70%" y2="90%" stroke="currentColor" />
-              <line x1="50%" y1="50%" x2="50%" y2="5%" stroke="currentColor" />
-            </svg>
           </div>
         </div>
       </div>
     </section>
   );
 }
+

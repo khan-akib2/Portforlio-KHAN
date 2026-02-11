@@ -9,7 +9,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: 'Ramzan Khan | Full-Stack & AIML',
+  title: 'K H A N Portfolio',
   description: 'Portfolio of Ramzan Khan - Full-Stack Developer & AI/ML Specialist',
 };
 

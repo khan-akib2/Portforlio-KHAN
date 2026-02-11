@@ -33,25 +33,31 @@ export default function Academics() {
 
   const certifications = [
     {
-      title: 'Web Development Fundamentals',
-      year: '2023',
-      type: 'Online Certification',
-      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=600&fit=crop',
-      issuer: 'Tech Academy',
+      title: 'AI Aware',
+      year: '2026',
+      type: 'AI Certification',
+      image: 'AWARECERTIFICATE.png',
+      issuer: 'AI Institute',
+      badge: '🎓',
+      description: 'Fundamental knowledge of Artificial Intelligence concepts and applications'
     },
     {
-      title: 'UI/UX Design Principles',
-      year: '2023',
-      type: 'Design Course',
-      image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=600&fit=crop',
-      issuer: 'Design Institute',
+      title: 'AI Appreciate',
+      year: '2026',
+      type: 'AI Certification',
+      image: 'AIAPPRECIATE.png',
+      issuer: 'AI Institute',
+      badge: '⭐',
+      description: 'Intermediate AI/ML skills and practical application experience'
     },
     {
-      title: 'JavaScript Advanced',
-      year: '2024',
-      type: 'Online Course',
-      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=600&fit=crop',
-      issuer: 'Code Academy',
+      title: 'AI For All',
+      year: '2026',
+      type: 'AI Certification',
+      image: 'AIFORALL.jpg',
+      issuer: 'AI Institute',
+      badge: '🚀',
+      description: 'Comprehensive AI knowledge spanning multiple domains and use cases'
     },
   ];
 
@@ -129,7 +135,7 @@ export default function Academics() {
                       {/* Content Card - More Eyecatching */}
                       <div className="w-1/2">
                         <div 
-                          className="relative p-6 md:p-8 rounded-xl md:rounded-2xl overflow-hidden border-2 transition-all duration-500 group-hover:scale-110 group-hover:-translate-y-3 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.8)]"
+                          className="relative p-6 md:p-8 rounded-xl md:rounded-2xl overflow-hidden border-2 transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.8)]"
                           style={{ 
                             borderColor: `${config.borderColor}66`,
                             background: `linear-gradient(135deg, rgba(3, 7, 30, 0.7) 0%, rgba(15, 23, 42, 0.5) 100%)`
@@ -159,14 +165,26 @@ export default function Academics() {
                           ></div>
 
                           <div className="relative z-10 space-y-4 md:space-y-5">
-                            {/* Status badge - Animated */}
-                            <div className="flex items-center gap-3">
-                              <span 
-                                className="inline-flex text-xs md:text-sm font-black uppercase tracking-widest text-white px-4 md:px-5 py-2 md:py-2.5 rounded-full shadow-lg animate-pulse"
-                                style={{ background: `linear-gradient(135deg, ${config.dotColor} 0%, ${config.glow} 100%)` }}
-                              >
-                                {edu.level}
-                              </span>
+                            {/* College Logo */}
+                            <div className="flex items-center justify-between">
+                              <div className="flex items-center gap-3">
+                                {/* Logo container */}
+                                <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl overflow-hidden border-2 bg-white/10 backdrop-blur-sm flex items-center justify-center" style={{ borderColor: config.borderColor }}>
+                                  <img 
+                                    src={edu.logo} 
+                                    alt={`${edu.institution} logo`}
+                                    className="w-full h-full object-cover"
+                                  />
+                                </div>
+                                
+                                {/* Status badge - Animated */}
+                                <span 
+                                  className="inline-flex text-xs md:text-sm font-black uppercase tracking-widest text-white px-4 md:px-5 py-2 md:py-2.5 rounded-full shadow-lg animate-pulse"
+                                  style={{ background: `linear-gradient(135deg, ${config.dotColor} 0%, ${config.glow} 100%)` }}
+                                >
+                                  {edu.level}
+                                </span>
+                              </div>
                               <div 
                                 className="w-2 h-2 rounded-full animate-pulse"
                                 style={{ backgroundColor: config.dotColor }}
@@ -231,7 +249,7 @@ export default function Academics() {
 
                       {/* Mobile card - Enhanced */}
                       <div 
-                        className="p-5 rounded-lg border-2 overflow-hidden transition-all duration-300 active:scale-105 shadow-lg"
+                        className="relative p-5 rounded-lg border-2 overflow-hidden transition-all duration-300 active:scale-105 shadow-lg"
                         style={{ 
                           borderColor: `${config.borderColor}66`,
                           background: `linear-gradient(135deg, rgba(3, 7, 30, 0.7) 0%, rgba(15, 23, 42, 0.5) 100%)`
@@ -243,8 +261,17 @@ export default function Academics() {
                           style={{ background: `linear-gradient(90deg, ${config.borderColor} 0%, ${colorConfig[index].accentLight} 50%, transparent 100%)` }}
                         ></div>
 
-                        <div className="space-y-3">
-                          <div className="flex items-center gap-2">
+                        <div className="relative z-10 space-y-3 pt-3">
+                          <div className="flex items-center gap-3">
+                            {/* Mobile Logo */}
+                            <div className="w-10 h-10 rounded-lg overflow-hidden border-2 bg-white/10 backdrop-blur-sm flex items-center justify-center shrink-0" style={{ borderColor: config.borderColor }}>
+                              <img 
+                                src={edu.logo} 
+                                alt={`${edu.institution} logo`}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                            
                             <span 
                               className="inline-flex text-xs font-black uppercase tracking-widest text-white px-3 py-1.5 rounded-full"
                               style={{ background: `linear-gradient(135deg, ${config.dotColor} 0%, ${config.glow} 100%)` }}
@@ -285,44 +312,33 @@ export default function Academics() {
       <section className="py-16 sm:py-24 px-4 sm:px-6 bg-white/1">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tighter mb-12 sm:mb-16 uppercase italic">
-            Certifications & <span className="text-outline">Achievements</span>
+            AI Certifications & <span className="text-outline">Badges</span>
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {certifications.map((cert, index) => (
               <div
                 key={index}
                 style={{ animationDelay: `${index * 0.05}s` }}
-                className="group cursor-pointer relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] bg-slate-900 border border-white/5 aspect-4/5 animate-slideUp hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/20 transition-transform duration-500 ease-out"
+                className="cert-card relative group overflow-hidden rounded-2xl sm:rounded-[2.5rem] bg-slate-900 border border-white/5 aspect-[4/5] animate-slideUp hover:scale-105 hover:-translate-y-2 hover:shadow-2xl hover:shadow-indigo-500/20 transition-transform duration-500 ease-out cursor-pointer"
               >
-                {/* Certificate Image */}
                 <img
                   src={cert.image}
                   alt={cert.title}
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                 />
-                
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-linear-to-t from-[#020617] via-[#020617]/20 to-transparent opacity-90"></div>
-
-                {/* Content at bottom */}
-                <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-8">
-                  <div className="text-[8px] sm:text-[9px] font-black uppercase tracking-[0.3em] text-indigo-400 mb-2">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/20 to-transparent opacity-90"></div>
+                <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8">
+                  <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-[0.3em] text-indigo-400">
                     {cert.type}
-                  </div>
-                  <h3 className="text-base sm:text-lg md:text-xl font-bold uppercase italic mb-2 line-clamp-2">
-                    {cert.title}
-                  </h3>
-                  <div className="flex items-center justify-between text-[8px] sm:text-[9px] text-slate-300 font-bold uppercase tracking-widest">
-                    <span>{cert.year}</span>
+                  </span>
+                  <h3 className="text-lg sm:text-2xl font-bold mt-1 uppercase italic">{cert.title}</h3>
+                  <p className="text-slate-400 text-xs sm:text-sm mt-2 line-clamp-2">{cert.description}</p>
+                  <div className="flex items-center gap-2 mt-3 text-[8px] sm:text-[9px] text-slate-400 font-bold uppercase tracking-widest">
+                    <span>{cert.badge}</span>
                     <span>{cert.issuer}</span>
+                    <span>•</span>
+                    <span>{cert.year}</span>
                   </div>
-                </div>
-
-                {/* Hover overlay badge */}
-                <div className="absolute top-3 sm:top-4 right-3 sm:right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button className="px-3 sm:px-4 py-1.5 sm:py-2 bg-indigo-600 rounded-lg text-[8px] sm:text-[9px] font-bold uppercase tracking-widest hover:bg-indigo-500 transition-colors">
-                    View
-                  </button>
                 </div>
               </div>
             ))}

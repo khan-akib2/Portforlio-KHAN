@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { FaGithub } from 'react-icons/fa';
 
 export default function ProjectModal({ project, isOpen, onClose }) {
   const [activeTab, setActiveTab] = useState('overview');
@@ -165,8 +166,10 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg font-bold uppercase tracking-widest text-xs transition-all text-center border border-indigo-500/30"
+                    className="flex-1 bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg font-bold uppercase tracking-widest text-xs transition-all text-center border border-indigo-500/30 flex items-center justify-center gap-2"
+                    title="GitHub Repository"
                   >
+                    <FaGithub className="text-lg" />
                     GitHub
                   </a>
                 )}

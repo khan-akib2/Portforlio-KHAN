@@ -401,36 +401,39 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter uppercase italic">
             The Archive<span className="text-outline">.</span>
           </h2>
-          <div className="flex gap-2 sm:gap-4 p-1 bg-white/5 rounded-lg sm:rounded-xl border border-white/10 flex-wrap">
+          <div className="flex gap-3 sm:gap-4 p-2 bg-gradient-to-r from-indigo-600/5 via-slate-900/50 to-purple-600/5 rounded-xl sm:rounded-2xl border border-indigo-500/20 flex-wrap backdrop-blur-sm">
             <button
               onClick={() => setActiveFilter('all')}
-              className={`filter-btn px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-[8px] sm:text-[9px] font-bold uppercase tracking-widest transition-all ${
+              className={`filter-btn relative px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-[8px] sm:text-[9px] font-bold uppercase tracking-widest transition-all duration-500 overflow-hidden group ${
                 activeFilter === 'all'
-                  ? 'bg-indigo-600 text-white'
-                  : 'text-slate-400 hover:bg-white/5'
+                  ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white shadow-lg shadow-indigo-500/40'
+                  : 'text-slate-300 hover:text-white border border-indigo-500/20 hover:border-indigo-500/50'
               }`}
             >
-              All
+              <span className="relative z-10">All</span>
+              {activeFilter === 'all' && <div className="absolute inset-0 bg-gradient-to-r from-indigo-400 to-indigo-600 opacity-0 group-hover:opacity-20 transition-opacity"></div>}
             </button>
             <button
               onClick={() => setActiveFilter('dev')}
-              className={`filter-btn px-4 py-2 rounded-lg text-[9px] font-bold uppercase tracking-widest transition-all ${
+              className={`filter-btn relative px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-[8px] sm:text-[9px] font-bold uppercase tracking-widest transition-all duration-500 overflow-hidden group ${
                 activeFilter === 'dev'
-                  ? 'bg-indigo-600 text-white'
-                  : 'text-slate-400 hover:bg-white/5'
+                  ? 'bg-gradient-to-r from-purple-600 to-purple-500 text-white shadow-lg shadow-purple-500/40'
+                  : 'text-slate-300 hover:text-white border border-purple-500/20 hover:border-purple-500/50'
               }`}
             >
-              Dev
+              <span className="relative z-10">Dev</span>
+              {activeFilter === 'dev' && <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-20 transition-opacity"></div>}
             </button>
             <button
               onClick={() => setActiveFilter('design')}
-              className={`filter-btn px-4 py-2 rounded-lg text-[9px] font-bold uppercase tracking-widest transition-all ${
+              className={`filter-btn relative px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-[8px] sm:text-[9px] font-bold uppercase tracking-widest transition-all duration-500 overflow-hidden group ${
                 activeFilter === 'design'
-                  ? 'bg-indigo-600 text-white'
-                  : 'text-slate-400 hover:bg-white/5'
+                  ? 'bg-gradient-to-r from-pink-600 to-pink-500 text-white shadow-lg shadow-pink-500/40'
+                  : 'text-slate-300 hover:text-white border border-pink-500/20 hover:border-pink-500/50'
               }`}
             >
-              Design
+              <span className="relative z-10">Design</span>
+              {activeFilter === 'design' && <div className="absolute inset-0 bg-gradient-to-r from-pink-400 to-pink-600 opacity-0 group-hover:opacity-20 transition-opacity"></div>}
             </button>
           </div>
         </div>
