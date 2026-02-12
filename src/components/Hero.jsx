@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-25 sm:pt-20 px-4 sm:px-6 overflow-hidden">
+    <section id="overview" className="relative min-h-screen flex items-center pt-25 sm:pt-20 px-4 sm:px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-6 sm:gap-12 w-full items-center z-10">
         <div className="lg:col-span-7">
           <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
@@ -77,7 +77,7 @@ export default function Hero() {
             <div className="relative w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-[28rem] lg:w-96 lg:h-[32rem] rounded-[2.5rem] overflow-hidden bg-slate-900 border border-indigo-500/40 shadow-xl shadow-indigo-500/20 animate-image-float">
               {/* Image placeholder */}
               <img 
-                src="HANDSOMEEEE.jpg" 
+                src="/HANDSOMEEEE.jpg" 
                 alt="Ramzan Khan" 
                 className="w-full h-full object-cover grayscale animate-shimmer"
               />

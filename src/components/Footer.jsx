@@ -19,7 +19,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 sm:gap-16 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-1 sm:gap-16 mb-12 sm:mb-16">
           {/* Brand Section */}
           <div className="text-center md:text-left">
             <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tighter mb-2 italic">
@@ -100,7 +100,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <p className="text-[8px] sm:text-[9px] text-slate-500 font-bold uppercase tracking-[0.3em]">
-            © 2026 Ramzan Khan • Developed with <span className="text-indigo-400">❤️</span> & Precision
+            © 2026 Ramzan Khan • Developed with & Precision
           </p>
           <p className="text-[8px] sm:text-[9px] text-slate-600 uppercase tracking-widest">
             Portfolio v1.0 • Crafted with Next.js & Tailwind

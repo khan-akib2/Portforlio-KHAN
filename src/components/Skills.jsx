@@ -402,7 +402,7 @@ export default function Skills() {
                           })}
                         </div>
                         <div className="flex items-center gap-2 pt-2">
-                          <button onClick={(e) => { e.stopPropagation(); setActiveSkill(null); }} className="px-3 py-1 text-xs font-bold rounded bg-white/5 hover:bg-white/7 transition">Back</button>
+                          <button onClick={(e) => { e.stopPropagation(); setActiveSkill(null); }} className="px-3 py-1 text-xs font-bold rounded bg-white/5 hover:bg-white/7 cursor-pointer transition">Back</button>
                           <div className="text-xs text-slate-400">Click any language to learn more</div>
                         </div>
                       </>
