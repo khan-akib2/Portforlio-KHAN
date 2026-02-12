@@ -404,7 +404,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
           <div className="flex gap-3 sm:gap-4 p-2 bg-gradient-to-r from-indigo-600/5 via-slate-900/50 to-purple-600/5 rounded-xl sm:rounded-2xl border border-indigo-500/20 flex-wrap backdrop-blur-sm">
             <button
               onClick={() => setActiveFilter('all')}
-              className={`filter-btn relative px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-[8px] sm:text-[9px] font-bold uppercase tracking-widest transition-all duration-500 overflow-hidden group ${
+              className={`filter-btn relative cursor-pointer px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-[8px] sm:text-[9px] font-bold uppercase tracking-widest transition-all duration-500 overflow-hidden group ${
                 activeFilter === 'all'
                   ? 'bg-gradient-to-r from-indigo-600 to-indigo-500 text-white shadow-lg shadow-indigo-500/40'
                   : 'text-slate-300 hover:text-white border border-indigo-500/20 hover:border-indigo-500/50'
@@ -415,7 +415,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
             </button>
             <button
               onClick={() => setActiveFilter('dev')}
-              className={`filter-btn relative px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-[8px] sm:text-[9px] font-bold uppercase tracking-widest transition-all duration-500 overflow-hidden group ${
+              className={`filter-btn cursor-pointer relative px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-[8px] sm:text-[9px] font-bold uppercase tracking-widest transition-all duration-500 overflow-hidden group ${
                 activeFilter === 'dev'
                   ? 'bg-gradient-to-r from-purple-600 to-purple-500 text-white shadow-lg shadow-purple-500/40'
                   : 'text-slate-300 hover:text-white border border-purple-500/20 hover:border-purple-500/50'
@@ -426,7 +426,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
             </button>
             <button
               onClick={() => setActiveFilter('design')}
-              className={`filter-btn relative px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-[8px] sm:text-[9px] font-bold uppercase tracking-widest transition-all duration-500 overflow-hidden group ${
+              className={`filter-btn cursor-pointer relative px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-[8px] sm:text-[9px] font-bold uppercase tracking-widest transition-all duration-500 overflow-hidden group ${
                 activeFilter === 'design'
                   ? 'bg-gradient-to-r from-pink-600 to-pink-500 text-white shadow-lg shadow-pink-500/40'
                   : 'text-slate-300 hover:text-white border border-pink-500/20 hover:border-pink-500/50'

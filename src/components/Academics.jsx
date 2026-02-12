@@ -10,7 +10,7 @@ export default function Academics() {
       institution: 'Nexcore Institute of Technology',
       description: 'Specializing in Artificial Intelligence & Machine Learning (AIML). Focusing on Deep Learning, Data Science, and Computer Vision.',
       logo: '/NIT.jpg',
-      level: 'B.Tech',
+      level: 'B.voc',
       color: 'from-blue-600 to-blue-800',
       accentColor: 'blue',
     },
@@ -40,8 +40,7 @@ export default function Academics() {
       year: '2026',
       type: 'AI Certification',
       image: '/AWARECERTIFICATE.png',
-      issuer: 'AI Institute',
-      badge: '🎓',
+      issuer: 'AI for All by GOVT. of India',
       description: 'Fundamental knowledge of Artificial Intelligence concepts and applications'
     },
     {
@@ -49,17 +48,15 @@ export default function Academics() {
       year: '2026',
       type: 'AI Certification',
       image: '/AIAPPRECIATE.png',
-      issuer: 'AI Institute',
-      badge: '⭐',
+      issuer: 'AI for All by GOVT. of India',
       description: 'Intermediate AI/ML skills and practical application experience'
     },
     {
-      title: 'AI For All',
+      title: 'Yuva AI For All',
       year: '2026',
       type: 'AI Certification',
       image: '/AIFORALL.jpg',
-      issuer: 'AI Institute',
-      badge: '🚀',
+      issuer: 'AISECTLEARN',
       description: 'Comprehensive AI knowledge spanning multiple domains and use cases'
     },
   ];
