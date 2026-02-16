@@ -10,6 +10,23 @@
     font-family: var(--font-plus-jakarta), 'Plus Jakarta Sans', sans-serif;
     background-color: #020617;
     color: #f8fafc;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  /* Prevent text selection globally */
+  * {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+
+  /* Disable context menu */
+  body {
+    -webkit-touch-callout: none;
   }
 }
 
