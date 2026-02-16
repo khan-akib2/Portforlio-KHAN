@@ -76,7 +76,7 @@ export default function MusicPlayer() {
       technologies: ['HTML5', 'CSS3', 'Flexbox', 'Grid'],
       githubLink: '#',
       liveLink: '#',
-      figmaLink: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/redbus-design',
+      figmaLink: 'https://embed.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&embed-host=share',
       status: 'Completed',
       challenge: 'Creating a complex seat selection interface with responsive grid and maintaining visual hierarchy across screen sizes.',
       solution: 'Used CSS Grid for seat layout, implemented custom checkboxes with CSS, and used media queries for responsive breakpoints.',
@@ -95,7 +95,7 @@ export default function MusicPlayer() {
       technologies: ['Figma', 'Prototyping', 'Design Systems', 'Accessibility'],
       githubLink: '#',
       liveLink: '#',
-      figmaLink: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/swiggy-design',
+      figmaLink: 'https://embed.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&embed-host=share',
       status: 'Completed',
       challenge: 'Creating a cohesive design system that works across multiple screen sizes while maintaining brand consistency.',
       solution: 'Built reusable component library in Figma with variants, created comprehensive design tokens, and established clear typography hierarchy.',
@@ -178,7 +178,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       technologies: ['Figma', 'Prototyping', 'Animation', 'Wireframing'],
       githubLink: '#',
       liveLink: '#',
-      figmaLink: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/smartwatch-design',
+      figmaLink: 'https://embed.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&embed-host=share',
       status: 'Completed',
       challenge: 'Designing for extreme space constraints while maintaining readability and functionality.',
       solution: 'Used hierarchical information display, created custom chart components, and focused on essential data visualization.',
@@ -196,7 +196,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       technologies: ['Figma', 'Lottie', 'CSS Animations', 'After Effects'],
       githubLink: '#',
       liveLink: '#',
-      figmaLink: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/netflix-animation',
+      figmaLink: 'https://embed.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&embed-host=share',
       status: 'Completed',
       challenge: 'Creating performant animations that enhance UX without impacting performance.',
       solution: 'Optimized animations using GPU acceleration, implemented lazy loading for heavy animations, used Lottie for complex sequences.',
@@ -272,9 +272,8 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       duration: '2 weeks',
       teamSize: '1 Designer',
       technologies: ['Figma', 'Prototyping'],
-      githubLink: '#',
       liveLink: '#',
-      figmaLink: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/gozoop-design',
+      figmaLink: 'https://www.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&t=2oyn8KIpzFjHyq5D-1"https://embed.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&embed-host=share',
       status: 'Completed',
     },
     {
@@ -290,7 +289,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       technologies: ['Figma', 'UX'],
       githubLink: '#',
       liveLink: '#',
-      figmaLink: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/snapdeal-design',
+      figmaLink: 'https://embed.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&embed-host=share',
       status: 'Completed',
     },
     {
@@ -306,7 +305,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       technologies: ['Figma', 'UX Research'],
       githubLink: '#',
       liveLink: '#',
-      figmaLink: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/halaltravels-design',
+      figmaLink: 'https://embed.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&embed-host=share',
       status: 'Completed',
     },
     {
@@ -322,7 +321,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       technologies: ['Figma', 'Accessibility'],
       githubLink: '#',
       liveLink: '#',
-      figmaLink: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/alhidayah-design',
+      figmaLink: 'https://embed.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&embed-host=share',
       status: 'Completed',
     },
     {
@@ -338,7 +337,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       technologies: ['Figma', 'UI Design'],
       githubLink: '#',
       liveLink: '#',
-      figmaLink: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/purpllle-design',
+      figmaLink: 'https://embed.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&embed-host=share',
       status: 'Completed',
     },
     {
@@ -354,7 +353,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       technologies: ['Figma', 'UX'],
       githubLink: '#',
       liveLink: '#',
-      figmaLink: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/bluepeak-design',
+      figmaLink: 'https://embed.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&embed-host=share',
       status: 'Completed',
     },
     {
@@ -370,7 +369,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       technologies: ['Figma', 'Accessibility'],
       githubLink: '#',
       liveLink: '#',
-      figmaLink: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/clinexel-design',
+      figmaLink: 'https://embed.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&embed-host=share',
       status: 'Completed',
     },
     {
@@ -386,7 +385,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       technologies: ['Figma', 'Prototyping'],
       githubLink: '#',
       liveLink: '#',
-      figmaLink: 'https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/hm-design',
+      figmaLink: 'https://embed.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&embed-host=share',
       status: 'Completed',
     },
   ];
@@ -462,7 +461,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
                     e.stopPropagation();
                     setSelectedProject(project);
                   }}
-                  className="inline-block mt-2 sm:mt-4 text-[8px] sm:text-[10px] font-bold uppercase tracking-widest border-b border-indigo-500/50 pb-1 hover:border-indigo-400 transition-colors"
+                  className="inline-block cursor-pointer mt-2 sm:mt-4 text-[8px] sm:text-[10px] font-bold uppercase tracking-widest border-b border-indigo-500/50 pb-1 hover:border-indigo-400 transition-colors"
                 >
                   View Case Study
                 </button>

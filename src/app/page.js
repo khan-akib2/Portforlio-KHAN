@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
@@ -11,21 +11,25 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
 export default function Home() {
+  const hasScrolled = useRef(false);
+
   useEffect(() => {
+    // Scroll to top only once on initial mount
+    if (!hasScrolled.current) {
+      window.scrollTo(0, 0);
+      hasScrolled.current = true;
+    }
+    
     // Disable right-click context menu
     const handleContextMenu = (e) => {
       e.preventDefault();
       return false;
     };
 
-    // Disable keyboard shortcuts for copying
+    // Disable keyboard shortcuts for copying (but allow inspect/dev tools)
     const handleKeyDown = (e) => {
-      // Ctrl+C, Ctrl+X, Ctrl+A, Ctrl+U, F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
-      if (
-        (e.ctrlKey && (e.key === 'c' || e.key === 'x' || e.key === 'a' || e.key === 'u')) ||
-        e.key === 'F12' ||
-        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C'))
-      ) {
+      // Only block: Ctrl+C, Ctrl+X, Ctrl+A, Ctrl+U
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'x' || e.key === 'a' || e.key === 'u')) {
         e.preventDefault();
         return false;
       }

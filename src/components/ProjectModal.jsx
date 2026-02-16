@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaGithub } from 'react-icons/fa';
 
 export default function ProjectModal({ project, isOpen, onClose }) {
@@ -8,6 +8,18 @@ export default function ProjectModal({ project, isOpen, onClose }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [copiedCode, setCopiedCode] = useState(false);
   const [showFigma, setShowFigma] = useState(false);
+  const [figmaFullscreen, setFigmaFullscreen] = useState(false);
+
+  // Reset states when project changes
+  useEffect(() => {
+    if (isOpen && project) {
+      setActiveTab('overview');
+      setCurrentImageIndex(0);
+      setCopiedCode(false);
+      setShowFigma(false);
+      setFigmaFullscreen(false);
+    }
+  }, [project?.title, isOpen]);
 
   if (!isOpen || !project) return null;
 
@@ -161,7 +173,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                     Live Demo
                   </a>
                 )}
-                {project.githubLink && (
+                {project.githubLink && project.cat !== 'design' && (
                   <a
                     href={project.githubLink}
                     target="_blank"
@@ -178,6 +190,21 @@ export default function ProjectModal({ project, isOpen, onClose }) {
               {/* Figma Embed */}
               {showFigma && project.figmaLink && (
                 <div className="mt-4 rounded-lg border border-pink-500/30 overflow-hidden bg-slate-950">
+                  <div className="p-3 sm:p-4 bg-slate-900/50 border-b border-pink-500/20 flex items-center justify-between">
+                    <p className="text-[10px] sm:text-xs text-slate-400">
+                      <span className="text-pink-400 font-bold">Note:</span> If the Figma embed asks for login, the file needs to be set to "Anyone with the link can view" in Figma's share settings.
+                    </p>
+                    <button
+                      onClick={() => setFigmaFullscreen(true)}
+                      className="ml-3 px-3 py-1.5 bg-pink-600 hover:bg-pink-700 text-white rounded text-[10px] sm:text-xs font-bold uppercase tracking-widest transition-all flex items-center gap-2 cursor-pointer flex-shrink-0"
+                      title="Open Fullscreen"
+                    >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/>
+                      </svg>
+                      <span className="hidden sm:inline">Fullscreen</span>
+                    </button>
+                  </div>
                   <iframe
                     title="Figma Design"
                     src={project.figmaLink}
@@ -185,7 +212,39 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                     height="400"
                     className="w-full"
                     style={{ border: 'none' }}
+                    allowFullScreen
                   />
+                </div>
+              )}
+
+              {/* Figma Fullscreen Modal */}
+              {figmaFullscreen && project.figmaLink && (
+                <div 
+                  className="fixed inset-0 bg-black/95 backdrop-blur-sm z-[100] flex flex-col animate-fadeIn"
+                  onClick={() => setFigmaFullscreen(false)}
+                >
+                  <div className="flex items-center justify-between p-4 bg-slate-900/80 border-b border-pink-500/30">
+                    <div>
+                      <h3 className="text-white font-bold text-sm sm:text-base">{project.title}</h3>
+                      <p className="text-slate-400 text-xs">Figma Design Preview</p>
+                    </div>
+                    <button
+                      onClick={() => setFigmaFullscreen(false)}
+                      className="w-10 h-10 rounded-full bg-slate-800 hover:bg-pink-600 text-white flex items-center justify-center transition-all cursor-pointer"
+                      title="Close Fullscreen"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  <div className="flex-1 relative" onClick={(e) => e.stopPropagation()}>
+                    <iframe
+                      title="Figma Design Fullscreen"
+                      src={project.figmaLink}
+                      className="w-full h-full"
+                      style={{ border: 'none' }}
+                      allowFullScreen
+                    />
+                  </div>
                 </div>
               )}
             </div>
