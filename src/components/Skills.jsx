@@ -449,7 +449,7 @@ export default function Skills() {
                                   delete newSelected[skill.id];
                                   setSelectedLanguages(newSelected);
                                 }} 
-                                className="px-3 py-1 text-xs font-bold rounded bg-white/5 hover:bg-white/7 transition"
+                                className="px-3 py-1 cursor-pointer text-xs font-bold rounded bg-white/5 hover:bg-white/7 transition"
                               >
                                 ← Back to Languages
                               </button>
@@ -466,7 +466,7 @@ export default function Skills() {
                                   delete newSelected[skill.id];
                                   setSelectedLanguages(newSelected);
                                 }} 
-                                className="mt-4 px-3 py-1 text-xs font-bold rounded bg-white/5 hover:bg-white/7 transition"
+                                className="mt-4 px-3 cursor-pointer py-1 text-xs font-bold rounded bg-white/5 hover:bg-white/7 transition"
                               >
                                 ← Back to Languages
                               </button>

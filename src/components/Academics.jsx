@@ -302,7 +302,7 @@ export default function Academics() {
                 <img
                   src={cert.image}
                   alt={cert.title}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                  className="w-full h-full object-cover sm:grayscale sm:group-hover:grayscale-0 transition-all duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/20 to-transparent opacity-90"></div>
                 <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8">

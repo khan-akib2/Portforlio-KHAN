@@ -26,42 +26,180 @@ export default function Projects() {
       solution: 'Implemented event listeners for audio element, used custom hooks for state management, and optimized re-renders with React.memo.',
       outcome: 'Successfully created a production-quality music player that supports 50+ tracks with lag-free performance.',
       codeExplanation: 'The code demonstrates a modular music player architecture with separate components for controls, playlist, and visualizer. Uses modern ES6+ features and event delegation for efficiency.',
-      code: `// Music Player Component
-import { useState, useEffect } from 'react';
+      code: `<!DOCTYPE html>
+<html lang="en">
 
-export default function MusicPlayer() {
-  const [songs, setSongs] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(100);
-  const audioRef = useRef(null);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="font-sans">Play free on mobile - Spotify</title>
+    <link href="./output.css" rel="stylesheet">
+    <link href="/SpotifyLogo.png" rel="website icon" alt="icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
 
-  const handlePlay = () => {
-    if (audioRef.current) {
-      isPlaying ? audioRef.current.pause() : audioRef.current.play();
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % songs.length);
-  };
-
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = volume / 100;
-    }
-  }, [volume]);
-
-  return (
-    <div className="player">
-      <audio ref={audioRef} src={songs[currentIndex]?.url} />
-      <PlayerControls {...{ isPlaying, handlePlay, handleNext }} />
-      <VolumeControl {...{ volume, setVolume }} />
-      <Playlist {...{ songs, currentIndex, setCurrentIndex }} />
+<body>
+    <div class="min-w-full min-h-18 bg-black text-white font-bold flex items-center justify-around">
+        <a class="flex items-center  text-xl" href="https://open.spotify.com/"><img src="/SpotifyLogo2.png"
+                class="rounded-full w-10 h-10">Spotify <span class="font-extralight text-[10px]">®</span></a>
+        <div>
+            <ul class="flex">
+                <li>
+                    <a href="#" class="p-4 font hover:text-green-500">Premium</a>
+                </li>
+                <li>
+                    <a href="https://support.spotify.com/in-en/" class="p-4 hover:text-green-500">Support</a>
+                </li>
+                <li>
+                    <a href="https://www.spotify.com/in-en/download/" class="p-4 hover:text-green-500">Download</a>
+                </li>
+                <li>
+                    <h1 class="pl-5 pr-5 font-light">|</h1>
+                </li>
+                <li>
+                    <a href="https://www.spotify.com/in-en/signup" class="p-4 hover:text-green-500">Sign up</a>
+                </li>
+                <li>
+                    <a href="https://accounts.spotify.com/en-GB/login" class="p-4 hover:text-green-500">Log in</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  );
-}`,
+    <div
+        style="background-image: url('/SpotifyLogo3.png')" h-132 bg-cover bg-center flex flex-col  items-center  text-white text-center">
+        <h1 class="text-6xl font-bold mx-90 mt-60">Play millions of songs </h1>
+        <span class="mt-3.5 text-6xl font-bold">and podcasts for free</span>
+        <a href="https://www.spotify.com/in-en/signup" class="mt-10 hover:scale-110 duration-200">
+            <p class="bg-white text-black px-8 py-2.5 rounded-full font-bold">Sing up free</p>
+        </a>
+    </div>
+    <div class="h-150">
+        <h1 class="text-center pt-18 font-bold text-4xl">Why Spotify?</h1>
+        <div class="flex items-center justify-center gap-5 mx-50 mt-20">
+            <div class="w-70">
+                <img src="/Spotify4.1.png" class="rounded-full object-cover w-35 h-35 mx-auto">
+                <h1 class="font-bold text-lg mt-10 text-center">Play your favourites</h1>
+                <p class="font-medium text-center mt-2">Listen to the songs you love, and<br> discover new music and<br>
+                    podcasts.</p>
+            </div>
+            <div class="w-70">
+                <img src="/Spotify4.2.png" class="rounded-full object-cover w-35 h-35 mx-auto">
+                <h1 class="font-bold text-lg mt-10 text-center">Playlists made easy</h1>
+                <p class="font-medium text-center mt-2">We'll help you make playlists. Or<br> enjoy playlists made by
+                    music<br> experts.</p>
+            </div>
+            <div class="w-70">
+                <img src="/Spotify4.3.png" class="rounded-full object-cover w-35 h-35 mx-auto">
+                <h1 class="font-bold text-lg mt-10 text-center">Make it yours</h1>
+                <p class="font-medium text-center mt-2">Tell us what you like, and we'll<br> recommend music just
+                    <br>for you.
+                </p>
+            </div>
+            <div class="w-70">
+                <img src="/Spotify4.4.png" class="rounded-full object-cover w-35 h-35 mx-auto">
+                <h1 class="font-bold text-lg mt-10 text-center">Save mobile data</h1>
+                <p class="font-medium text-center mt-2">To use less data when you play<br> music, turn on Data Saver
+                    in<br> Settings.</p>
+            </div>
+        </div>
+    </div>
+    <div class="bg-green-400 min-w-full min-h-100">
+        <h1 class="text-center text-5xl font-bold pt-15 ">It's free.No credit card required</h1>
+        <img src="Spotify5.png" alt="image" class="mx-auto mt-5 w-350 h-">
+    </div>
+    <div class="h-125">
+        <h1 class="text-center font-bold pt-18 text-4xl">Got questions?</h1>
+        <div class="mx-50 pt-18">
+                <div class="hover:bg-stone-100 h-20 cursor-pointer">
+                    <h1 class="font-bold text-xl p-6 flex justify-between  hover:underline">How do I create a
+                        playlist?<img src="DownArrow.png" alt="image" class="w-10 h-10 "></h1>
+                </div>
+            <hr class="border-gray-300">
+                <div class="hover:bg-stone-100 h-20 mt-0.5 cursor-pointer">
+                    <h1 class="font-bold text-xl p-6 flex justify-between hover:underline"> do I
+                        activate Data Saver mode?<img src="DownArrow.png" alt="image" class="w-10 h-10 "></h1>
+                </div>
+            <hr class="border-gray-300">
+                <div class="hover:bg-stone-100 h-20 mt-0.5 cursor-pointer">
+                    <h1 class="font-bold text-xl p-6 flex justify-between  hover:underline">Where can I find
+                        Podcasts?<img src="DownArrow.png" alt="image" class="w-10 h-10 "></h1>
+                </div>
+        </div>
+    </div>
+    <div
+        style="background-image: url('/Spotify6.png')" h-130 bg-cover bg-center flex flex-col  items-center  text-white text-center">
+        <h1 class="text-6xl font-bold mx-90 mt-75">Ready?Let's play. </h1>
+        <a href="https://www.spotify.com/in-en/signup" class="mt-10 hover:scale-110 duration-200">
+            <p class="bg-white text-black px-8 py-2.5 rounded-full font-bold">Sing up free</p>
+        </a>
+    </div>
+    <div class="w-full min-h-135 bg-black  text-white ">
+        <div class="flex gap-10  justify-center pt-20">
+            <div>
+                <a href="https://www.spotify.com/in-en/free/#ref=spotifycom_footer_free" class="flex items-center  text-xl pt-1 pr-20 font-bold"><img src="/Spotify7.png"
+                        class="rounded-full w-10 h-10">Spotify <span class="font-extralight  text-[5px]">®</span></a>
+            </div>
+            <div class="flex flex-col gap-4 font-normal">
+                <p class="font-bold text-[13px] text-neutral-500">COMPANY</p>
+                <a href="https://www.spotify.com/in-en/about-us/contact/" class="hover:text-green-500">About</a>
+                <a href="https://www.lifeatspotify.com/" class="hover:text-green-500">Jobs</a>
+                <a href="https://newsroom.spotify.com/" class="hover:text-green-500">For the Record</a>
+            </div>
+            <div class="flex flex-col gap-4 font-normal">
+                <p class="font-bold text-[13px] text-neutral-500">COMMUNITIES</p>
+                <a href="https://artists.spotify.com/home" class="hover:text-green-500">For Artists</a>
+                <a href="https://developer.spotify.com/" class="hover:text-green-500">Developers</a>
+                <a href="https://ads.spotify.com/en-IN/" class="hover:text-green-500">Advertising</a>
+                <a href="https://investors.spotify.com/home/default.aspx" class="hover:text-green-500">Investors</a>
+                <a href="https://spotifyforvendors.com/" class="hover:text-green-500">Vendors</a>
+            </div>
+            <div class="flex flex-col gap-4 font-normal">
+                <p class="font-bold text-[13px] text-neutral-500">USEFUL LINKS</p>
+                <a href="https://support.spotify.com/in-en/" class="hover:text-green-500">Support</a>
+                <a href="https://open.spotify.com/" class="hover:text-green-500">Web Player</a>
+                <a href="https://www.spotify.com/in-en/free/" class="hover:text-green-500">Free Mobile App</a>
+                <a href="https://www.spotify.com/in-en/import-music/" class="hover:text-green-500">Import your<br> music</a>
+            </div>
+            <div class="flex flex-col gap-4 font-normal">
+                <p class="font-bold text-[13px] text-neutral-500">SPOTIFY PLANS</p>
+                <a href="https://www.spotify.com/in-en/premium/#ref=spotifycom_footer_premium_individual" class="hover:text-green-500">Premium<br> Individual</a>
+                <a href="https://www.spotify.com/in-en/duo/#ref=spotifycom_footer_premium_duo" class="hover:text-green-500">Premium Duo</a>
+                <a href="https://www.spotify.com/in-en/family/#ref=spotifycom_footer_premium_family" class="hover:text-green-500">Premium Family</a>
+                <a href="https://www.spotify.com/in-en/student/#ref=spotifycom_footer_premium_student" class="hover:text-green-500">Premium<br> Student</a>
+                <a href="https://www.spotify.com/in-en/free/#ref=spotifycom_footer_free" class="hover:text-green-500">Spotify Free</a>
+            </div>
+            <div class="flex space-x-6 pl-10 pt-2">
+                <a href="https://www.instagram.com/spotify/" target="#" class="flex justify-center text-center bg-neutral-800 rounded-full w-13 h-13 p-3.5 text-2xl">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://x.com/spotify" target="#" class="flex justify-center text-center bg-neutral-800 rounded-full w-13 h-13 p-3.5 text-2xl">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/Spotify" target="#" class="flex justify-center text-center bg-neutral-800 rounded-full w-13 h-13 p-3.5 text-2xl">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+        <div class="flex justify-around pt-25 items-center">
+            <div class="text-neutral-500  space-x-5 text-[12px]">
+                <a href="https://www.spotify.com/in-en/legal/end-user-agreement/" class="hover:text-green-500">Legal</a>
+                <a href="https://www.spotify.com/in-en/safetyandprivacy" class="hover:text-green-500">Safety & Privacy Center</a>
+                <a href="https://www.spotify.com/in-en/legal/privacy-policy/" class="hover:text-green-500">Privacy Policy</a>
+                <a href="https://www.spotify.com/in-en/legal/cookies-policy/" class="hover:text-green-500">Cookies</a>
+                <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3" class="hover:text-green-500">About Ads</a>
+                <a href="https://www.spotify.com/in-en/accessibility" class="hover:text-green-500">Accessibility</a>
+            </div>
+            <div class="text-neutral-500  space-x-5 text-[12px] mb-25 font-normal">
+                <div class="flex items-center">
+                    <img src="/Spotify8.png" alt="image" class="rounded-full object-cover w-5 h-5">
+                    <a href="https://www.spotify.com/in-en/select-your-country-region/" class="hover:text-green-500">India (English)</a>
+                </div>
+                <p class="mt-3">©2025 Spotify AB</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>`,
     },
     {
       title: 'Red Bus Clone',
@@ -117,54 +255,118 @@ export default function MusicPlayer() {
       challenge: 'Handling real-time data updates for multiple shipments while maintaining a smooth, responsive UI with minimal lag.',
       solution: 'Implemented WebSocket connections, used React Context API for global state, and optimized rendering with useMemo and useCallback.',
       outcome: 'High-performance dashboard handling 1000+ concurrent shipment tracking with sub-100ms response times.',
-      codeExplanation: 'TypeScript-driven component architecture with proper type safety. Uses advanced React patterns like custom hooks and render optimization.',
-      code: `interface Shipment {
-  id: string;
-  status: 'pending' | 'in-transit' | 'delivered' | 'failed';
-  origin: Coordinates;
-  destination: Coordinates;
-  currentLocation: Coordinates;
-  estimatedDelivery: Date;
-  lastUpdate: Date;
-  history: StatusUpdate[];
-}
+      codeExplanation: 'Complete shipment tracking dashboard with sidebar navigation, statistics cards, client activity table, and fleet status monitoring.',
+      code: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShipTrack Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="flex">
+        <!-- SIDEBAR -->
+        <div class="w-full h-screen bg-[#001D21] flex flex-col justify-between">
+            <div>
+                <div class="flex items-center p-3">
+                    <img src="/ShipTrackLogo.png" alt="logo" class="w-12 h-12 rounded-lg">
+                    <h1 class="font-bold text-lg text-[#C9E1E1] pl-1">Shiptrack</h1>
+                </div>
+                <hr class="border-gray-500 w-full">
+                <div class="flex flex-col p-4 text-[#85969A] text-[18px] font-medium gap-1">
+                    <p class="hover:bg-[#263F43] p-2 rounded-lg cursor-pointer">Dashboard</p>
+                    <p class="hover:bg-[#263F43] p-2 rounded-lg cursor-pointer">Shipments</p>
+                    <p class="hover:bg-[#263F43] p-2 rounded-lg cursor-pointer">Orders</p>
+                    <p class="hover:bg-[#263F43] p-2 rounded-lg cursor-pointer">Clients</p>
+                    <p class="hover:bg-[#263F43] p-2 rounded-lg cursor-pointer">Fleet management</p>
+                    <p class="hover:bg-[#263F43] p-2 rounded-lg cursor-pointer">Warehousing</p>
+                    <p class="hover:bg-[#263F43] p-2 rounded-lg cursor-pointer">Reports & analytics</p>
+                    <p class="hover:bg-[#263F43] p-2 rounded-lg cursor-pointer">Billing & payments</p>
+                    <p class="hover:bg-[#263F43] p-2 rounded-lg cursor-pointer">Security</p>
+                    <p class="hover:bg-[#263F43] p-2 rounded-lg cursor-pointer">Preferences</p>
+                </div>
+            </div>
+            <div class="font-normal text-gray-500">
+                <div class="p-4 gap-3 flex flex-col">
+                    <p>Settings</p>
+                    <p>User management</p>
+                    <p>Help & support</p>
+                </div>
+                <hr class="border-gray-500 w-full">
+                <div class="flex items-center gap-2 p-3">
+                    <img src="/Pic1.png" alt="user" class="w-10 h-10 rounded-full object-cover">
+                    <h1 class="flex flex-col">Denzel Washington<span class="text-[12px] text-gray-500">Admin</span></h1>
+                </div>
+            </div>
+        </div>
 
-interface ShipmentDashboardProps {
-  userId: string;
-}
+        <!-- MAIN CONTENT -->
+        <div class="w-full h-screen flex flex-col bg-[#F1F7F5] overflow-y-auto">
+            <!-- Header -->
+            <div class="flex justify-between items-center p-4">
+                <h1 class="font-bold text-[#272D2B] text-lg">Dashboard</h1>
+                <div class="flex gap-2">
+                    <input type="text" placeholder="Search..." 
+                           class="h-10 w-60 border bg-white border-gray-300 rounded-lg p-2.5 font-normal text-sm focus:ring focus:ring-gray-300 focus:outline-none">
+                    <span class="h-10 w-10 border bg-white border-gray-300 rounded-lg">
+                        <img src="/Bell.png" alt="notifications" class="w-5 h-5 m-2">
+                    </span>
+                </div>
+            </div>
+            <hr class="border-gray-500 w-full">
 
-export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
-  const [shipments, setShipments] = useState<Shipment[]>([]);
-  const [filter, setFilter] = useState<'all' | 'pending' | 'in-transit' | 'delivered'>('all');
-  const [loading, setLoading] = useState(true);
+            <!-- Stats Cards -->
+            <div class="flex gap-5 p-4 bg-[#F3F5F3] justify-center flex-wrap">
+                <div class="bg-white border-2 border-gray-300 p-3 w-74 rounded-lg">
+                    <div class="w-10 h-10 bg-white border-2 border-gray-300 rounded-lg p-2">
+                        <img src="/Bell.png" alt="icon" class="w-5 h-5">
+                    </div>
+                    <h1 class="mt-5 text-[#6D7170] font-normal">Total shipments</h1>
+                    <p class="text-3xl text-[#424949] font-bold">500</p>
+                </div>
+                <div class="bg-white border-2 border-gray-300 p-3 w-74 rounded-lg">
+                    <div class="w-10 h-10 bg-white border-2 border-gray-300 rounded-lg p-2">
+                        <img src="/Bell.png" alt="icon" class="w-5 h-5">
+                    </div>
+                    <h1 class="mt-5 text-[#6D7170] font-normal">Pending Orders</h1>
+                    <p class="text-3xl text-[#424949] font-bold">15</p>
+                </div>
+                <div class="bg-white border-2 border-gray-300 p-3 w-74 rounded-lg">
+                    <div class="w-10 h-10 bg-white border-2 border-gray-300 rounded-lg p-2">
+                        <img src="/Bell.png" alt="icon" class="w-5 h-5">
+                    </div>
+                    <h1 class="mt-5 text-[#6D7170] font-normal">Revenue</h1>
+                    <p class="text-3xl text-[#424949] font-bold">$50,000</p>
+                </div>
+                <div class="bg-white border-2 border-gray-300 p-3 w-74 rounded-lg">
+                    <div class="w-10 h-10 bg-white border-2 border-gray-300 rounded-lg p-2">
+                        <img src="/Bell.png" alt="icon" class="w-5 h-5">
+                    </div>
+                    <h1 class="mt-5 text-[#424949] font-normal">Total Clients</h1>
+                    <p class="text-3xl text-[#424949] font-bold">120</p>
+                </div>
+            </div>
 
-  useEffect(() => {
-    const socket = new WebSocket(\`ws://api.shiptrack.com/track/\${userId}\`);
-    
-    socket.onmessage = (event) => {
-      const updatedShipment = JSON.parse(event.data);
-      setShipments(prev => 
-        prev.map(s => s.id === updatedShipment.id ? updatedShipment : s)
-      );
-    };
-
-    return () => socket.close();
-  }, [userId]);
-
-  const filteredShipments = useMemo(() => {
-    return filter === 'all' 
-      ? shipments 
-      : shipments.filter(s => s.status === filter);
-  }, [shipments, filter]);
-
-  return (
-    <div className="dashboard-container">
-      <ShipmentMap shipments={filteredShipments} />
-      <ShipmentAnalytics data={filteredShipments} />
-      <ShipmentTable data={filteredShipments} />
+            <!-- Client Activity Section -->
+            <div class="bg-white w-full p-4">
+                <h1 class="font-bold text-[#424949] text-lg">Client activity</h1>
+                <div class="flex gap-5 pt-5">
+                    <div>
+                        <p class="font-bold text-[#424949] text-xl">5</p>
+                        <h1 class="font-medium text-[#6D7170] text-sm">New clients (this week)</h1>
+                    </div>
+                    <div>
+                        <p class="font-bold text-[#424949] text-xl">12</p>
+                        <h1 class="font-medium text-[#6D7170] text-sm">Active vehicles</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  );
-}`,
+</body>
+</html>`,
+
     },
     {
       title: 'Smartwatch UI',
@@ -219,6 +421,207 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       challenge: 'Designing a compelling hero and responsive destination grid.',
       solution: 'Used responsive grids and optimized images for fast load.',
       outcome: 'Clean, responsive travel landing page ready for demos.',
+      code: `<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link href="./output.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="bg-white text-black  shadow-xl fixed z-50 flex *:flex w-full ">
+
+        <ul class="flex items-center justify-center p-4 gap-5">
+
+            <li class="ml-20 text-blue-400 font-bold text-2xl">Wanderlust Travels</li>
+
+            <li>
+
+                <a class="ml-180   hover:text-blue-300 duration-300" href="#">Destinations</a>
+
+            </li>
+
+            <li>
+
+                <a class=" hover:text-blue-300 hover:scale-110 duration-300" href="#">Testimonials</a>
+
+            </li>
+
+            <li>
+
+                <a class=" hover:text-blue-300 duration-300" href="#">Contact</a>
+
+            </li>
+
+            <li>
+
+                <a class=" inline-block px-2 py-2 text-white font-medium  bg-blue-400 rounded-lg" href="#">Book Now</a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+     <div class="h-screen" style="background-image: url('/LP7.1.png')" bg-cover bg-center flex flex-col justify-center items-center text-white text-center">
+
+          <h1 class="font-bold text-7xl">Discover Your Next Adventure</h1>
+
+          <p class="mt-2 text-xl">Explore the world's most breathtaking destinations with Wanderlust Travels</p>
+
+          <button class="w-150  h-12 rounded-lg mt-5 bg-blue-500 text-white font-medium"><a href="#">Explore Destinations</a></button>
+
+     </div>
+
+     <div class="bg-linear-to-b from-white to-pink-100">
+
+        <h1 class="text-center font-bold text-4xl mt-15">Popular Destinatons</h1>
+
+        <div class="flex p-10 gap-8 items-center justify-center">
+
+            <div class="w-200 h-115 ml-50 rounded-lg bg-white shadow-md hover:scale-110 duration-300">
+
+                <img src="/LP7.2.png" class="h-80 rounded-t-lg">
+
+                <h1 class="ml-4 mt-5 font-medium text-lg">Maldives</h1>
+
+                <p class="ml-4 mt-2 text-gray-500">Crystal-clear waters,white-sand beaches,and overwater villas make Maldives a true paradise. </p>
+
+            </div>
+
+            <div class="w-200 h-115 rounded-lg bg-white shadow-md hover:scale-110 duration-300">
+
+                <img src="/LP7.3.png" class="h-80 w-200 rounded-t-lg">
+
+                <h1 class="ml-4 mt-5 font-medium text-lg">Paris,France</h1>
+
+                <p class="ml-4 mt-2 text-gray-500">The city of lights--home to the Eiffel Tower,fine art,and timeless romance. </p>
+
+            </div>
+
+            <div class="w-200 h-115 mr-50 rounded-lg bg-white shadow-md hover:scale-110 duration-300">
+
+                <img src="/LP7.4.png" class="h-80 w-200 rounded-t-lg">
+
+                <h1 class="ml-4 mt-5 font-medium text-lg">Tokyo, Japan</h1>
+
+                <p class="ml-4 mt-2 text-gray-500">A perfect blend of tradition and technology with neon lights and ancient temples.</p>
+
+            </div>    
+
+     </div>
+
+     </div>
+
+     <div>
+
+        <div>
+
+        <h1 class="font-bold text-2xl text-center mt-18">What Our Travellers Say</h1>
+
+        <div class="flex  p-10 items-center justify-center gap-8">
+
+            <div class="w-80 min-h-45 flex-col bg-pink-50 flex text-center justify-center rounded-lg shadow-md">
+
+            <span class="p-6 italic">"Wanderlust made our honeymoon unforgettable. The service was top-notch and stress-free"</span>
+
+            <div class="flex">
+
+            <img src="/LP7.5.png" class="rounded-full object-cover ml-15 mb-5 w-10 h-10">
+
+            <h1 class="ml-4 mt-1 font-medium">Sarah Johnson   </h1>
+
+            </div>
+
+        </div>
+
+            <div class="flex flex-col w-80 min-h-45 text-center justify-center bg-pink-50 rounded-lg shadow-md">
+
+                <span class="p-6 italic">"The Paris package was well organized,affordable, and magical. Highly recommend!   "</span>
+
+            <div class="flex">
+
+            <img src="/LP7.6.png" class="rounded-full object-cover ml-15 mb-5 w-10 h-10">
+
+            <h1 class="ml-4 mt-1 font-medium">James Carter</h1>
+
+            </div>
+
+            </div>
+
+                
+
+            <div class="flex flex-col text-center justify-center w-80 min-h-45 bg-pink-50 rounded-lg shadow-md">
+
+                <span class="p-6 italic">"Wanderlust made our honeymoon unforgettable. The service was top-notch and stress-free"</span>
+
+            <div class="flex">
+
+            <img src="/LP7.7.png" class="rounded-full object-cover ml-15 mb-5 w-10 h-10">
+
+            <h1 class="ml-4 mt-1 font-medium">Sydney Sweeny</h1>
+
+            </div>
+
+            </div>
+
+        </div>
+
+     </div>
+
+     </div>
+
+     <div class="bg-black h-60 text-white ">
+
+    <div class=" ml-55 p-4 mt-9"><span class=" font-bold text-xl "> Wanderlust Travels</span><br><br>
+
+        <span class="">
+
+            Explore. Dream. Discover. Let us plan your next journey<br> today.
+
+        </span>
+
+        <div class="ml-120 -mt-24 " > <span class="font-bold ">Quick Links</span><br><br>
+
+            <ul>
+
+                <li class=""><a href="#">Destination</a></li>
+
+                <li class=""><a href="#">Testimonials</a></li>
+
+        <li class=""><a href="#">Contact</a></li>
+
+            
+
+            <div class="ml-90 -mt-30"><span class=" font-bold">Contact Us</span><br><br>
+
+                <span class="">📞 +1 (555) 123-4567</span>
+
+                <br>
+
+                <span class="">📧 info@Wanderlust.com
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>`
     },
     {
       title: 'One Page Love',
@@ -237,13 +640,72 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       challenge: 'Creating smooth scroll and polished typography.',
       solution: 'Used CSS scroll-behavior and custom fonts for a refined look.',
       outcome: 'Attractive single-page site with smooth interactions.',
+      codeExplanation: 'One Page Love website clone with responsive navigation, hero section, and curated content showcase.',
+      code: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Page Love</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-200">
+    <!-- Navigation -->
+    <nav class="bg-black min-w-full min-h-12 border-b border-[#7e80a34d] flex items-center justify-between text-[#999] font-normal">
+        <div class="flex parent">
+            <div class="lg:flex sm:flex flex">
+                <img src="/OnePageLoveLogo.png" class="w-10 h-10 p-1 ml-8">
+                <h1 class="p-2 text-white font-medium lg:hidden xl:flex hidden">One Page Love</h1>
+                <h1 class="p-2 ml-3 border-l border-[#7e80a34d] font-normal lg:hidden">Menu ↓</h1>
+            </div>
+            <ul class="p-2 hidden lg:flex xl:hidden">
+                <li><a class="p-3 border-l border-[#7e80a34d] border-r" href="#">Websites</a></li>
+                <li><a class="p-3 border-r border-[#7e80a34d]" href="#">Sections</a></li>
+                <li><a class="p-3 border-r border-[#7e80a34d]" href="#">Templates</a></li>
+                <li><a class="p-3 border-r border-[#7e80a34d]" href="#">Resources</a></li>
+                <li><a class="p-3 border-r border-[#7e80a34d]" href="#">Build One Pager</a></li>
+            </ul>
+        </div>
+        <ul class="p-2 xl:flex hidden">
+            <li><a class="p-3 border-l border-[#7e80a34d] border-r" href="#">Websites</a></li>
+            <li><a class="p-3 border-r border-[#7e80a34d]" href="#">Sections</a></li>
+            <li><a class="p-3 border-r border-[#7e80a34d]" href="#">Templates</a></li>
+            <li><a class="p-3 border-r border-[#7e80a34d]" href="#">Resources</a></li>
+            <li><a class="p-3 border-r border-[#7e80a34d]" href="#">Build One Pager</a></li>
+        </ul>
+        <div class="mr-10 text-[#999] font-normal">Search</div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="min-w-full min-h-80 bg-black flex flex-col pt-12 pl-4 md:flex text-wrap">
+        <div class="md:w-[80%] lg:w-[50%] md:mx-auto p-1">
+            <h1 class="text-sm text-[8px] border-[2px] border-[#7e80a34d] rounded-full px-2 text-[#999] w-fit">Since 2008</h1>
+            <div>
+                <h1 class="font-bold text-white text-4xl w-full sm:w-10 text-wrap pt-1">One Page websites, curated.</h1>
+            </div>
+            <div>
+                <p class="text-[#999] pt-8 sm:w-full lg:w-full">
+                    A collection of 8796 One Pagers curated by <span class="font-bold underline underline-offset-4">Rob Hope</span>. 
+                    Learn <span class="font-bold underline underline-offset-4">more</span>, 
+                    <span class="font-bold underline underline-offset-4">submit yours</span> or browse our latest, hand-picked inspiration:
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Image -->
+    <div class="min-w-30 min-h-50 rounded-lg p-4">
+        <img src="/OnePageLove2.png" class="w-full h-full rounded-lg">
+    </div>
+</body>
+</html>`,
     },
     {
       title: 'Simple Loading Spinner',
       cat: 'dev',
       tech: 'CSS/JS',
-      img: 'https://images.unsplash.com/photo-1520975651285-9beebd2d6a13?w=500',
-      images: ['https://images.unsplash.com/photo-1520975651285-9beebd2d6a13?w=500'],
+      img: 'Loading.png',
+      images: ['Loading.png'],
       subtitle: 'Reusable loading spinner component',
       description: 'A tiny, reusable loading spinner component implemented with CSS and minimal JS for toggling. Easy to drop into any project.',
       duration: '1 day',
@@ -255,9 +717,140 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       challenge: 'Creating a lightweight, accessible spinner.',
       solution: 'Implemented CSS-only animation with reduced motion fallback.',
       outcome: 'Small, accessible spinner that degrades gracefully.',
-      code: `/* CSS Spinner */
-.spinner { width: 48px; height: 48px; border-radius: 50%; border: 6px solid rgba(0,0,0,0.1); border-left-color: #6366F1; animation: spin 1s linear infinite }
-@keyframes spin { to { transform: rotate(360deg) } }`,
+      codeExplanation: 'Simple loading spinner using Tailwind CSS animations. The spinner uses border styling with transparency and the animate-spin utility for rotation.',
+      code: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Spinner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="flex flex-col gap-5 justify-center items-center h-screen">
+        <div class="w-16 h-16 border-4 border-black border-b-transparent rounded-full animate-spin"></div>
+        <span class="font-bold">Loading...</span>
+    </div>
+</body>
+</html>`,
+    },
+    {
+      title: 'Dodge Challenger',
+      cat: 'dev',
+      tech: 'HTML/CSS',
+      img: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500',
+      images: ['https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=500', 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=500'],
+      subtitle: 'Muscle car showcase landing page',
+      description: 'A stunning landing page showcasing the iconic Dodge Challenger with bold typography, dynamic layouts, and smooth animations. Features hero section, specifications, gallery, and contact form with a dark, aggressive design aesthetic.',
+      duration: '1 week',
+      teamSize: '1 Developer',
+      technologies: ['HTML5', 'CSS3', 'Flexbox', 'Animations'],
+      githubLink: '#',
+      liveLink: '#',
+      status: 'Completed',
+      challenge: 'Creating an aggressive, performance-focused design that matches the Challenger brand identity.',
+      solution: 'Used bold typography, dark color scheme with red accents, and CSS animations for dynamic feel.',
+      outcome: 'High-impact landing page with strong visual hierarchy and engaging user experience.',
+      codeExplanation: 'Dodge Challenger showcase page with hero section, specifications grid, and responsive design using modern CSS techniques.',
+      code: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodge Challenger - American Muscle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes slideIn {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .animate-slide-in {
+            animation: slideIn 1s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-sm border-b border-red-900/30">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-red-600">DODGE</h1>
+            <ul class="flex gap-8 text-sm font-semibold">
+                <li><a href="#" class="hover:text-red-600 transition">HOME</a></li>
+                <li><a href="#specs" class="hover:text-red-600 transition">SPECS</a></li>
+                <li><a href="#gallery" class="hover:text-red-600 transition">GALLERY</a></li>
+                <li><a href="#contact" class="hover:text-red-600 transition">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-red-950/20 to-black"></div>
+        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200" 
+             alt="Dodge Challenger" 
+             class="absolute inset-0 w-full h-full object-cover opacity-40">
+        <div class="relative z-10 text-center animate-slide-in">
+            <h2 class="text-7xl font-black mb-4 tracking-wider">CHALLENGER</h2>
+            <p class="text-xl text-gray-300 mb-8">PURE AMERICAN MUSCLE</p>
+            <button class="bg-red-600 hover:bg-red-700 px-8 py-3 font-bold text-lg transition transform hover:scale-105">
+                CONFIGURE YOURS
+            </button>
+        </div>
+    </section>
+
+    <!-- Specs Section -->
+    <section id="specs" class="py-20 px-6 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-5xl font-black text-center mb-16 text-red-600">SPECIFICATIONS</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-black/50 border border-red-900/30 p-8 text-center hover:border-red-600 transition">
+                    <h4 class="text-4xl font-bold text-red-600 mb-2">717</h4>
+                    <p class="text-gray-400 uppercase tracking-wider">Horsepower</p>
+                </div>
+                <div class="bg-black/50 border border-red-900/30 p-8 text-center hover:border-red-600 transition">
+                    <h4 class="text-4xl font-bold text-red-600 mb-2">3.6s</h4>
+                    <p class="text-gray-400 uppercase tracking-wider">0-60 MPH</p>
+                </div>
+                <div class="bg-black/50 border border-red-900/30 p-8 text-center hover:border-red-600 transition">
+                    <h4 class="text-4xl font-bold text-red-600 mb-2">6.2L</h4>
+                    <p class="text-gray-400 uppercase tracking-wider">V8 Engine</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 px-6 bg-black">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-5xl font-black text-center mb-16 text-red-600">GALLERY</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600" 
+                     alt="Challenger Front" 
+                     class="w-full h-64 object-cover hover:scale-105 transition transform">
+                <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=600" 
+                     alt="Challenger Side" 
+                     class="w-full h-64 object-cover hover:scale-105 transition transform">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-gradient-to-t from-black to-gray-900">
+        <div class="max-w-2xl mx-auto text-center">
+            <h3 class="text-5xl font-black mb-8 text-red-600">GET IN TOUCH</h3>
+            <p class="text-gray-400 mb-8">Ready to experience American muscle? Contact us today.</p>
+            <button class="bg-red-600 hover:bg-red-700 px-10 py-4 font-bold text-lg transition transform hover:scale-105">
+                SCHEDULE TEST DRIVE
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-red-900/30 py-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2026 Dodge. All Rights Reserved. | American Muscle Redefined</p>
+    </footer>
+</body>
+</html>`,
     },
 
     // Design projects additions
@@ -273,7 +866,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       teamSize: '1 Designer',
       technologies: ['Figma', 'Prototyping'],
       liveLink: '#',
-      figmaLink: 'https://www.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&t=2oyn8KIpzFjHyq5D-1"https://embed.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&embed-host=share',
+      figmaLink: 'https://embed.figma.com/design/ceb5GQFtvDpEfwR8BSAa79/FINAL-WORK?node-id=1-2&embed-host=share',
       status: 'Completed',
     },
     {
@@ -360,8 +953,8 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
       title: 'Clinexel Website Clone',
       cat: 'design',
       tech: 'Figma',
-      img: 'https://images.unsplash.com/photo-1582719478250-7d9c8b1a5a64?w=500',
-      images: ['https://images.unsplash.com/photo-1582719478250-7d9c8b1a5a64?w=500'],
+      img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500',
+      images: ['https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=500'],
       subtitle: 'Healthcare platform redesign',
       description: 'Design concept for Clinexel focusing on easy appointment booking and clear patient flows.',
       duration: '3 weeks',
@@ -448,7 +1041,7 @@ export function ShipmentDashboard({ userId }: ShipmentDashboardProps) {
               <img
                 src={project.img}
                 alt={project.title}
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover md:grayscale md:group-hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-[#020617]/20 to-transparent opacity-90"></div>
               <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8">
