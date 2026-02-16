@@ -19,7 +19,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-1 sm:gap-16 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 md:gap-16 mb-12 sm:mb-16">
           {/* Brand Section */}
           <div className="text-center md:text-left">
             <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-tighter mb-2 italic">

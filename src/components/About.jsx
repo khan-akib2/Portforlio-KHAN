@@ -34,7 +34,7 @@ export default function About() {
           <div className="flex flex-wrap gap-3 sm:gap-4 mt-8 sm:mt-10">
             <a 
               href="#contact" 
-              className="group relative px-6 sm:px-8 py-3 sm:py-4 overflow-hidden rounded-lg sm:rounded-xl bg-indigo-600 text-white font-bold text-xs sm:text-sm transition-all inline-block hover:shadow-xl hover:shadow-indigo-500/30"
+              className="group relative px-8 sm:px-8 py-3 sm:py-4 overflow-hidden rounded-lg sm:rounded-xl bg-indigo-600 text-white font-bold text-xs sm:text-sm transition-all inline-block hover:shadow-xl hover:shadow-indigo-500/30 w-full sm:w-auto text-center"
             >
               <span className="relative z-10">LET'S TALK</span>
               <div className="absolute inset-0 bg-indigo-400 translate-y-[101%] group-hover:translate-y-0 transition-transform"></div>

@@ -23,7 +23,7 @@ export default function Contact() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16 sm:mb-20">
           <a
             href="mailto:ramzankhan4212@gmail.com"
-            className="group relative px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm uppercase tracking-widest hover:shadow-2xl hover:shadow-indigo-500/40 transition-all hover:scale-105"
+            className="group relative px-8 sm:px-10 py-3 sm:py-4 bg-gradient-to-r from-indigo-600 to-indigo-500 rounded-lg sm:rounded-xl font-bold text-xs sm:text-sm uppercase tracking-widest hover:shadow-2xl hover:shadow-indigo-500/40 transition-all hover:scale-105 w-full sm:w-auto text-center"
           >
             <span className="relative z-10">✉️ Send Email</span>
           </a>

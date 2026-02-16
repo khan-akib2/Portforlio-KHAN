@@ -4,8 +4,8 @@ import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 export default function Hero() {
   return (
-    <section id="overview" className="relative min-h-screen flex items-center pt-25 sm:pt-20 px-4 sm:px-6 overflow-hidden">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-6 sm:gap-12 w-full items-center z-10">
+    <section id="overview" className="relative min-h-screen flex items-center pt-24 sm:pt-20 px-4 sm:px-6 overflow-hidden">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 sm:gap-12 w-full items-center z-10">
         <div className="lg:col-span-7">
           <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
             <span className="text-[8px] sm:text-[10px] font-extrabold tracking-[0.3em] uppercase text-indigo-500">
@@ -27,14 +27,44 @@ export default function Hero() {
             Developing intelligent experiences.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 sm:gap-8">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center gap-4 sm:gap-8 w-full sm:w-auto">
             <a 
               href="#work" 
-              className="group relative px-6 sm:px-10 py-3 sm:py-5 overflow-hidden rounded-xl sm:rounded-2xl bg-indigo-600 text-white font-bold text-xs sm:text-sm transition-all inline-block"
+              className="group relative px-8 sm:px-10 py-3 sm:py-5 overflow-hidden rounded-xl sm:rounded-2xl bg-indigo-600 text-white font-bold text-xs sm:text-sm transition-all inline-block w-full sm:w-auto text-center"
             >
               <span className="relative z-10">EXPLORE WORK</span>
               <div className="absolute inset-0 bg-indigo-400 translate-y-[101%] group-hover:translate-y-0 transition-transform"></div>
             </a>
+
+            <div className="flex sm:hidden gap-6 items-center justify-center w-full">
+              <a
+                href="https://github.com/khan-akib2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl text-slate-400 hover:text-indigo-500 transition-colors"
+                title="GitHub"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ramzan-khan-81a797379/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl text-slate-400 hover:text-indigo-500 transition-colors"
+                title="LinkedIn"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="https://www.instagram.com/khan_akib2/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl text-slate-400 hover:text-indigo-500 transition-colors"
+                title="Instagram"
+              >
+                <FaInstagram />
+              </a>
+            </div>
 
             <div className="hidden sm:flex gap-6 items-center">
               <a
@@ -68,13 +98,13 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="lg:col-span-5 relative flex items-center justify-center mt-12 lg:mt-0">
-          <div className="relative">
+        <div className="lg:col-span-5 relative flex items-center justify-center mt-8 lg:mt-0">
+          <div className="relative w-full max-w-sm mx-auto">
             {/* Minimal outer glow */}
             <div className="absolute -inset-3 bg-gradient-to-r from-indigo-600/10 via-purple-600/10 to-indigo-600/10 rounded-[3rem]" style={{filter: 'blur(25px)'}}></div>
             
             {/* Main image container */}
-            <div className="relative w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-[28rem] lg:w-96 lg:h-[32rem] rounded-[2.5rem] overflow-hidden bg-slate-900 border border-indigo-500/40 shadow-xl shadow-indigo-500/20 animate-image-float">
+            <div className="relative w-full aspect-[4/5] rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-slate-900 border border-indigo-500/40 shadow-xl shadow-indigo-500/20 animate-image-float">
               {/* Image placeholder */}
               <img 
                 src="/HANDSOMEEEE.jpg" 
