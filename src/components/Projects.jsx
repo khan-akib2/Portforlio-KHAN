@@ -18,8 +18,8 @@ export default function Projects() {
       description: 'A fully functional Spotify clone with music player controls, playlist management, and dynamic song selection. Features include play/pause, volume control, real-time progress tracking, and a responsive design that works seamlessly across all devices.',
       duration: '3 weeks',
       teamSize: '1 Developer',
-      technologies: ['HTML5', 'JavaScript', 'CSS3', 'Responsive Design'],
-      githubLink: '#',
+      technologies: ['HTML5',   'Tailwind CSS'],
+      githubLink: 'https://github.com/khan-akib2/Spotify-Clone',
       liveLink: '#',
       status: 'Completed',
       challenge: 'Building a smooth audio player with synchronized UI updates and handling complex playlist state management.',
@@ -248,8 +248,8 @@ export default function Projects() {
       description: 'Advanced shipment tracking dashboard built with React and TypeScript. Features real-time updates, interactive maps, dynamic status filters, and comprehensive analytics visualization. Supports tracking multiple shipments with detailed status histories.',
       duration: '6 weeks',
       teamSize: '3 Developers',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Chart.js', 'Leaflet Maps'],
-      githubLink: '#',
+      technologies: ['Html5',  'Tailwind CSS'],
+      githubLink: 'https://github.com/khan-akib2/Dashboard-Clone',
       liveLink: '#',
       status: 'Completed',
       challenge: 'Handling real-time data updates for multiple shipments while maintaining a smooth, responsive UI with minimal lag.',
@@ -414,8 +414,8 @@ export default function Projects() {
       description: 'A travel booking landing page clone with large hero imagery, destination cards, and booking CTA. Built with responsive layouts and Tailwind utility classes.',
       duration: '1 week',
       teamSize: '1 Developer',
-      technologies: ['HTML5', 'Tailwind CSS', 'Responsive Design'],
-      githubLink: '#',
+      technologies: ['HTML5', 'Tailwind CSS'],
+      githubLink: 'https://github.com/khan-akib2/Tours-Travels_Website_Clone',
       liveLink: '#',
       status: 'Completed',
       challenge: 'Designing a compelling hero and responsive destination grid.',
@@ -633,8 +633,8 @@ export default function Projects() {
       description: 'A single-page, romantic-themed landing page with smooth section scroll, hero, testimonials, and contact form. Simple, elegant design focusing on typography and spacing.',
       duration: '4 days',
       teamSize: '1 Developer',
-      technologies: ['HTML5', 'CSS3', 'Vanilla JS'],
-      githubLink: '#',
+      technologies: ['HTML5', 'Tailwindcss',],
+      githubLink: 'https://github.com/khan-akib2/Website-clone',
       liveLink: '#',
       status: 'Completed',
       challenge: 'Creating smooth scroll and polished typography.',
@@ -710,8 +710,8 @@ export default function Projects() {
       description: 'A tiny, reusable loading spinner component implemented with CSS and minimal JS for toggling. Easy to drop into any project.',
       duration: '1 day',
       teamSize: '1 Developer',
-      technologies: ['CSS', 'JavaScript'],
-      githubLink: '#',
+      technologies: ['Html5', 'Tailwindcss'],
+      githubLink: 'https://github.com/khan-akib2/Loading_Spinner',
       liveLink: '#',
       status: 'Completed',
       challenge: 'Creating a lightweight, accessible spinner.',
@@ -744,8 +744,8 @@ export default function Projects() {
       description: 'A stunning landing page showcasing the iconic Dodge Challenger with bold typography, dynamic layouts, and smooth animations. Features hero section, specifications, gallery, and contact form with a dark, aggressive design aesthetic.',
       duration: '1 week',
       teamSize: '1 Developer',
-      technologies: ['HTML5', 'CSS3', 'Flexbox', 'Animations'],
-      githubLink: '#',
+      technologies: ['HTML5', 'Tailwindcss'],
+      githubLink: 'https://github.com/khan-akib2/Dodge_Challenger_Clone',
       liveLink: '#',
       status: 'Completed',
       challenge: 'Creating an aggressive, performance-focused design that matches the Challenger brand identity.',
@@ -849,6 +849,195 @@ export default function Projects() {
     <footer class="bg-black border-t border-red-900/30 py-8 text-center text-gray-500 text-sm">
         <p>&copy; 2026 Dodge. All Rights Reserved. | American Muscle Redefined</p>
     </footer>
+</body>
+</html>`,
+    },
+    {
+      title: 'Simple Chatbot',
+      cat: 'dev',
+      tech: 'HTML/CSS/JS',
+      img: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=500',
+      images: ['https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=500'],
+      subtitle: 'Interactive AI chatbot interface',
+      description: 'A clean and modern chatbot interface with real-time message display, typing indicators, and smooth animations. Features auto-responses, message history, and a responsive design that works seamlessly on all devices.',
+      duration: '3 days',
+      teamSize: '1 Developer',
+      technologies: ['HTML5', 'Tailwindcss', 'JavaScript', 'DOM Manipulation'],
+      githubLink: 'https://github.com/khan-akib2/Chat_Bot',
+      liveLink: '#',
+      status: 'Completed',
+      challenge: 'Creating smooth message animations and handling real-time user interactions efficiently.',
+      solution: 'Implemented event listeners, DOM manipulation, and CSS transitions for fluid UX.',
+      outcome: 'Fully functional chatbot with instant responses and polished UI/UX.',
+      codeExplanation: 'Interactive chatbot with message bubbles, auto-scroll, typing animation, and predefined responses using vanilla JavaScript.',
+      code: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chatbot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .message {
+            animation: fadeIn 0.3s ease-out;
+        }
+        @keyframes typing {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        .typing-dot {
+            animation: typing 1.4s infinite;
+        }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-50 to-blue-50 h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md h-[600px] flex flex-col overflow-hidden">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white p-4 flex items-center gap-3">
+            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
+                    <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/>
+                </svg>
+            </div>
+            <div>
+                <h1 class="font-bold text-lg">AI Assistant</h1>
+                <p class="text-xs text-purple-100">Online</p>
+            </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-3 bg-gray-50">
+            <div class="message flex gap-2">
+                <div class="w-8 h-8 bg-purple-600 rounded-full flex-shrink-0 flex items-center justify-center text-white text-xs font-bold">
+                    AI
+                </div>
+                <div class="bg-white rounded-2xl rounded-tl-none px-4 py-2 shadow-sm max-w-[75%]">
+                    <p class="text-sm text-gray-800">Hello! I'm your AI assistant. How can I help you today?</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Typing Indicator -->
+        <div id="typingIndicator" class="hidden px-4 pb-2">
+            <div class="flex gap-2 items-center">
+                <div class="w-8 h-8 bg-purple-600 rounded-full flex-shrink-0 flex items-center justify-center text-white text-xs font-bold">
+                    AI
+                </div>
+                <div class="bg-white rounded-2xl rounded-tl-none px-4 py-3 shadow-sm flex gap-1">
+                    <div class="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
+                    <div class="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
+                    <div class="w-2 h-2 bg-gray-400 rounded-full typing-dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="p-4 bg-white border-t border-gray-200">
+            <div class="flex gap-2">
+                <input 
+                    type="text" 
+                    id="userInput" 
+                    placeholder="Type your message..." 
+                    class="flex-1 px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm"
+                    onkeypress="if(event.key === 'Enter') sendMessage()"
+                >
+                <button 
+                    onclick="sendMessage()" 
+                    class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const responses = {
+            'hello': 'Hi there! How can I assist you?',
+            'hi': 'Hello! What can I do for you today?',
+            'how are you': 'I\'m doing great! Thanks for asking. How about you?',
+            'what is your name': 'I\'m a simple AI chatbot created to help you!',
+            'help': 'I can answer basic questions. Try asking me about my name or how I\'m doing!',
+            'bye': 'Goodbye! Have a great day!',
+            'thanks': 'You\'re welcome! Happy to help!',
+            'default': 'I\'m not sure how to respond to that. Try asking something else!'
+        };
+
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const message = input.value.trim();
+            
+            if (message === '') return;
+            
+            // Add user message
+            addMessage(message, 'user');
+            input.value = '';
+            
+            // Show typing indicator
+            showTyping();
+            
+            // Simulate bot response delay
+            setTimeout(() => {
+                hideTyping();
+                const response = getResponse(message.toLowerCase());
+                addMessage(response, 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const chatMessages = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message flex gap-2 ' + (sender === 'user' ? 'justify-end' : '');
+            
+            if (sender === 'bot') {
+                messageDiv.innerHTML = \`
+                    <div class="w-8 h-8 bg-purple-600 rounded-full flex-shrink-0 flex items-center justify-center text-white text-xs font-bold">
+                        AI
+                    </div>
+                    <div class="bg-white rounded-2xl rounded-tl-none px-4 py-2 shadow-sm max-w-[75%]">
+                        <p class="text-sm text-gray-800">\${text}</p>
+                    </div>
+                \`;
+            } else {
+                messageDiv.innerHTML = \`
+                    <div class="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl rounded-tr-none px-4 py-2 shadow-sm max-w-[75%]">
+                        <p class="text-sm">\${text}</p>
+                    </div>
+                    <div class="w-8 h-8 bg-gray-300 rounded-full flex-shrink-0 flex items-center justify-center text-gray-700 text-xs font-bold">
+                        U
+                    </div>
+                \`;
+            }
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function getResponse(message) {
+            for (let key in responses) {
+                if (message.includes(key)) {
+                    return responses[key];
+                }
+            }
+            return responses['default'];
+        }
+
+        function showTyping() {
+            document.getElementById('typingIndicator').classList.remove('hidden');
+            const chatMessages = document.getElementById('chatMessages');
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function hideTyping() {
+            document.getElementById('typingIndicator').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>`,
     },
