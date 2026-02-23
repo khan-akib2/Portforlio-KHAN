@@ -51,7 +51,7 @@ export default function Academics() {
       issuer: 'AI for All by GOVT. of India',
       description: 'Intermediate AI/ML skills and practical application experience'
     },
-    {
+    { 
       title: 'Yuva AI For All',
       year: '2026',
       type: 'AI Certification',

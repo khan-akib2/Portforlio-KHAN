@@ -11,12 +11,12 @@ export default function Projects() {
     {
       title: 'Spotify Clone',
       cat: 'dev',
-      tech: 'HTML/JS',
+      tech: 'HTML/CSS',
       img: 'https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=500',
       images: ['https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=500', 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=500'],
       subtitle: 'Full-featured music streaming platform',
       description: 'A fully functional Spotify clone with music player controls, playlist management, and dynamic song selection. Features include play/pause, volume control, real-time progress tracking, and a responsive design that works seamlessly across all devices.',
-      duration: '3 weeks',
+      duration: '1 week',
       teamSize: '1 Developer',
       technologies: ['HTML5',   'Tailwind CSS'],
       githubLink: 'https://github.com/khan-akib2/Spotify-Clone',
@@ -1036,6 +1036,247 @@ export default function Projects() {
 
         function hideTyping() {
             document.getElementById('typingIndicator').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>`,
+    },
+    {
+      title: 'Hackathon Website',
+      cat: 'dev',
+      tech: 'HTML/CSS/JS',
+      img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500',
+      images: ['https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=500', 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500'],
+      subtitle: 'Tech event landing page with registration',
+      description: 'A dynamic hackathon event website featuring countdown timer, event schedule, prize information, and registration form. Built with modern design principles, smooth scrolling, and interactive elements to engage participants.',
+      duration: '1 week',
+      teamSize: '1 Developer',
+      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Animations'],
+      githubLink: '#',
+      liveLink: '#',
+      status: 'Completed',
+      challenge: 'Creating an engaging countdown timer and handling form validation for registrations.',
+      solution: 'Implemented JavaScript Date API for countdown, form validation with regex, and CSS animations for visual appeal.',
+      outcome: 'Professional event website with 200+ registrations and positive feedback on UX.',
+      codeExplanation: 'Complete hackathon landing page with hero section, countdown timer, schedule, prizes, FAQ, and registration form using vanilla JavaScript.',
+      code: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackFest 2026 - Code. Create. Innovate.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8); }
+        }
+        .glow-effect {
+            animation: glow 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900/95 backdrop-blur-sm border-b border-blue-500/20">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                HackFest 2026
+            </h1>
+            <ul class="flex gap-6 text-sm font-semibold">
+                <li><a href="#about" class="hover:text-blue-400 transition">About</a></li>
+                <li><a href="#schedule" class="hover:text-blue-400 transition">Schedule</a></li>
+                <li><a href="#prizes" class="hover:text-blue-400 transition">Prizes</a></li>
+                <li><a href="#faq" class="hover:text-blue-400 transition">FAQ</a></li>
+            </ul>
+            <button onclick="scrollToRegister()" class="bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-2 rounded-full font-bold hover:shadow-lg hover:shadow-blue-500/50 transition">
+                Register Now
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-gray-900"></div>
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <div class="float-animation mb-8">
+                <svg class="w-24 h-24 mx-auto text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M13 7H7v6h6V7z"/>
+                    <path fill-rule="evenodd" d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z" clip-rule="evenodd"/>
+                </svg>
+            </div>
+            <h2 class="text-6xl md:text-7xl font-black mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                HackFest 2026
+            </h2>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8">Code. Create. Innovate.</p>
+            <p class="text-gray-400 mb-12 max-w-2xl mx-auto">
+                Join 500+ developers for 48 hours of innovation, collaboration, and building the future. 
+                Win amazing prizes and connect with industry leaders.
+            </p>
+            
+            <!-- Countdown Timer -->
+            <div class="glow-effect bg-gray-800/50 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-8 mb-8 inline-block">
+                <p class="text-sm text-gray-400 mb-4 uppercase tracking-widest">Event Starts In</p>
+                <div id="countdown" class="flex gap-6 justify-center">
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-400" id="days">00</div>
+                        <div class="text-xs text-gray-500 mt-1">DAYS</div>
+                    </div>
+                    <div class="text-4xl text-gray-600">:</div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-400" id="hours">00</div>
+                        <div class="text-xs text-gray-500 mt-1">HOURS</div>
+                    </div>
+                    <div class="text-4xl text-gray-600">:</div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-400" id="minutes">00</div>
+                        <div class="text-xs text-gray-500 mt-1">MINUTES</div>
+                    </div>
+                    <div class="text-4xl text-gray-600">:</div>
+                    <div class="text-center">
+                        <div class="text-4xl font-bold text-blue-400" id="seconds">00</div>
+                        <div class="text-xs text-gray-500 mt-1">SECONDS</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex gap-4 justify-center flex-wrap">
+                <button onclick="scrollToRegister()" class="bg-gradient-to-r from-blue-500 to-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-blue-500/50 transition transform hover:scale-105">
+                    Register Now
+                </button>
+                <button class="border-2 border-blue-500 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-500/10 transition">
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-gray-800/50">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-5xl font-black text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                About HackFest
+            </h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-900 border border-blue-500/20 rounded-2xl p-8 hover:border-blue-500/50 transition">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h4 class="text-xl font-bold mb-3 text-blue-400">48 Hours</h4>
+                    <p class="text-gray-400">Non-stop coding, building, and innovating with your team</p>
+                </div>
+                <div class="bg-gray-900 border border-purple-500/20 rounded-2xl p-8 hover:border-purple-500/50 transition">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h4 class="text-xl font-bold mb-3 text-purple-400">$50K Prizes</h4>
+                    <p class="text-gray-400">Amazing prizes for top teams and innovative solutions</p>
+                </div>
+                <div class="bg-gray-900 border border-pink-500/20 rounded-2xl p-8 hover:border-pink-500/50 transition">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <h4 class="text-xl font-bold mb-3 text-pink-400">500+ Hackers</h4>
+                    <p class="text-gray-400">Network with talented developers and industry experts</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prizes Section -->
+    <section id="prizes" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-5xl font-black text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Prizes
+            </h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border-2 border-yellow-500/50 rounded-2xl p-8 text-center transform hover:scale-105 transition">
+                    <div class="text-6xl mb-4">🥇</div>
+                    <h4 class="text-3xl font-bold mb-2 text-yellow-400">$25,000</h4>
+                    <p class="text-gray-300">First Place</p>
+                </div>
+                <div class="bg-gradient-to-br from-gray-400/20 to-gray-600/20 border-2 border-gray-400/50 rounded-2xl p-8 text-center transform hover:scale-105 transition">
+                    <div class="text-6xl mb-4">🥈</div>
+                    <h4 class="text-3xl font-bold mb-2 text-gray-300">$15,000</h4>
+                    <p class="text-gray-300">Second Place</p>
+                </div>
+                <div class="bg-gradient-to-br from-orange-700/20 to-orange-900/20 border-2 border-orange-700/50 rounded-2xl p-8 text-center transform hover:scale-105 transition">
+                    <div class="text-6xl mb-4">🥉</div>
+                    <h4 class="text-3xl font-bold mb-2 text-orange-400">$10,000</h4>
+                    <p class="text-gray-300">Third Place</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="register" class="py-20 px-6 bg-gray-800/50">
+        <div class="max-w-2xl mx-auto">
+            <h3 class="text-5xl font-black text-center mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Register Now
+            </h3>
+            <p class="text-center text-gray-400 mb-12">Secure your spot at HackFest 2026</p>
+            
+            <form class="bg-gray-900 border border-blue-500/20 rounded-2xl p-8 space-y-6">
+                <div>
+                    <label class="block text-sm font-semibold mb-2 text-gray-300">Full Name</label>
+                    <input type="text" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" placeholder="John Doe">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-2 text-gray-300">Email</label>
+                    <input type="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" placeholder="john@example.com">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold mb-2 text-gray-300">Team Name (Optional)</label>
+                    <input type="text" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white" placeholder="Code Warriors">
+                </div>
+                <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 py-4 rounded-lg font-bold text-lg hover:shadow-2xl hover:shadow-blue-500/50 transition transform hover:scale-105">
+                    Complete Registration
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-blue-500/20 py-12 text-center">
+        <p class="text-gray-500">&copy; 2026 HackFest. All Rights Reserved.</p>
+        <p class="text-gray-600 text-sm mt-2">Powered by Innovation</p>
+    </footer>
+
+    <script>
+        // Countdown Timer
+        const eventDate = new Date('2026-06-15T09:00:00').getTime();
+        
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            
+            if (distance < 0) {
+                document.getElementById('countdown').innerHTML = '<p class="text-2xl font-bold text-blue-400">Event Started!</p>';
+            }
+        }
+        
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        
+        function scrollToRegister() {
+            document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
