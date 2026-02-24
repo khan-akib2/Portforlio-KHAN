@@ -1,5 +1,6 @@
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
+import ScrollToTop from '@/components/ScrollToTop';
 
 const plusJakarta = Plus_Jakarta_Sans({
   weight: ['300', '400', '600', '800'],
@@ -9,7 +10,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: 'K H A N Portfolio',
+  title: 'Ramzan Khan - Full-Stack Developer & AI/ML Learner',
   description: 'Portfolio of Ramzan Khan - Full-Stack Developer & AI/ML Specialist',
 };
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${plusJakarta.variable} font-sans antialiased`} style={{ fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif' }}>
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );
