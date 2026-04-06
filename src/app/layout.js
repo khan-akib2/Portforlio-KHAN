@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
           }}
         />
       </head>
-      <body className={`${plusJakarta.variable} font-sans antialiased`} style={{ fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif' }}>
+      <body className={`${plusJakarta.variable} font-sans antialiased`} style={{ fontFamily: 'var(--font-plus-jakarta), Plus Jakarta Sans, sans-serif' }} suppressHydrationWarning>
         {children}
         <ScrollToTop />
       </body>

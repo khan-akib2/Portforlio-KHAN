@@ -59,6 +59,54 @@ export default function Academics() {
       issuer: 'AISECTLEARN',
       description: 'Comprehensive AI knowledge spanning multiple domains and use cases'
     },
+    {
+      title: 'AI Fluency for educators',
+      year: '2026',
+      type: 'AI Certification',
+      image: '/AI Fluency for educators.png',
+      issuer: 'Anthropic',
+      description: 'Supervised and unsupervised learning, neural networks, and model evaluation'
+    },
+    {
+      title: 'AI Fluency for non profits',
+      year: '2026',
+      type: 'AI Certification',
+      image: '/AI Fluency for non profits.png',
+      issuer: 'Anthropic',
+      description: 'CNNs, RNNs, transformers, and advanced deep learning architectures'
+    },
+    {
+      title: 'AI Fluency for students',
+      year: '2026',
+      type: 'AI Certification',
+      image: '/AI Fluency for students.png',
+      issuer: 'Anthropic',
+      description: 'Text classification, sentiment analysis, and large language model fine-tuning'
+    },
+    {
+      title: 'AI Fluency Framework and Foundations',
+      year: '2026',
+      type: 'AI Certification',
+      image: '/AI Fluency Framework and Foundations.png',
+      issuer: 'Anthropic',
+      description: 'Image processing, object detection, and real-time vision applications'
+    },
+    {
+      title: 'Calude101',
+      year: '2026',
+      type: 'AI Certification',
+      image: '/Claude101.png',
+      issuer: 'Anthroic',
+      description: 'Prompt engineering, diffusion models, and building generative AI applications'
+    },
+    {
+      title: 'Teaching the AI Fluency Framework',
+      year: '2026',
+      type: 'AI Certification',
+      image: '/AIFORALL.jpg',
+      issuer: 'Anthropic',
+      description: 'Data analysis, visualization, statistical modeling, and Python for data science'
+    },
   ];
 
   return (
@@ -337,29 +385,31 @@ export default function Academics() {
             onClick={() => setSelectedCertificate(null)}
           >
             <div 
-              className="relative max-w-5xl w-full max-h-[90vh] bg-slate-900 rounded-2xl overflow-hidden border border-indigo-500/30"
+              className="relative max-w-4xl w-full bg-slate-900 rounded-2xl overflow-hidden border border-indigo-500/30 flex flex-col"
+              style={{ maxHeight: '92vh' }}
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Close button */}
-              <button
-                onClick={() => setSelectedCertificate(null)}
-                className="absolute top-4 cursor-pointer right-4 z-10 w-10 h-10 rounded-full bg-slate-950/80 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-indigo-600 transition-all"
-              >
-                ✕
-              </button>
-
-              {/* Certificate Info */}
-              <div className="absolute top-4 left-4 z-10 bg-slate-950/80 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/10">
-                <h3 className="text-lg font-black text-white uppercase">{selectedCertificate.title}</h3>
-                <p className="text-xs text-slate-400 mt-1">{selectedCertificate.issuer} • {selectedCertificate.year}</p>
+              {/* Header bar */}
+              <div className="flex items-center justify-between px-5 py-3 border-b border-white/10 shrink-0">
+                <div>
+                  <h3 className="text-base font-black text-white uppercase">{selectedCertificate.title}</h3>
+                  <p className="text-xs text-slate-400 mt-0.5">{selectedCertificate.issuer} • {selectedCertificate.year}</p>
+                </div>
+                <button
+                  onClick={() => setSelectedCertificate(null)}
+                  className="w-9 h-9 rounded-full bg-slate-800 border border-white/10 flex items-center justify-center text-white hover:bg-indigo-600 transition-all cursor-pointer shrink-0"
+                >
+                  ✕
+                </button>
               </div>
 
               {/* Full Certificate Image */}
-              <div className="w-full h-full flex items-center justify-center p-8">
+              <div className="flex-1 overflow-auto flex items-center justify-center p-6">
                 <img
                   src={selectedCertificate.image}
                   alt={selectedCertificate.title}
-                  className="max-w-full max-h-full object-contain rounded-lg"
+                  className="max-w-full object-contain rounded-lg"
+                  style={{ maxHeight: 'calc(92vh - 80px)' }}
                 />
               </div>
             </div>

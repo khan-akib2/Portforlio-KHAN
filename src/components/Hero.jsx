@@ -110,6 +110,7 @@ export default function Hero() {
                 src="/HANDSOMEEEE.jpg" 
                 alt="Ramzan Khan" 
                 className="w-full h-full object-cover grayscale animate-shimmer"
+                suppressHydrationWarning
               />
               
               {/* Animated gradient overlay */}

@@ -6,16 +6,13 @@ import { FaGithub } from 'react-icons/fa';
 export default function ProjectModal({ project, isOpen, onClose }) {
   const [activeTab, setActiveTab] = useState('overview');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [copiedCode, setCopiedCode] = useState(false);
   const [showFigma, setShowFigma] = useState(false);
   const [figmaFullscreen, setFigmaFullscreen] = useState(false);
 
-  // Reset states when project changes
   useEffect(() => {
     if (isOpen && project) {
       setActiveTab('overview');
       setCurrentImageIndex(0);
-      setCopiedCode(false);
       setShowFigma(false);
       setFigmaFullscreen(false);
     }
@@ -23,20 +20,9 @@ export default function ProjectModal({ project, isOpen, onClose }) {
 
   if (!isOpen || !project) return null;
 
-  // Reset to overview if viewing a design project
-  if (project.cat === 'design' && activeTab === 'code') {
-    setActiveTab('overview');
-  }
-
   const images = project.images || [project.img];
   const nextImage = () => setCurrentImageIndex((prev) => (prev + 1) % images.length);
   const prevImage = () => setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
-
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(project.code);
-    setCopiedCode(true);
-    setTimeout(() => setCopiedCode(false), 2000);
-  };
 
   return (
     <div 
@@ -66,7 +52,7 @@ export default function ProjectModal({ project, isOpen, onClose }) {
 
         {/* Tabs */}
         <div className="flex gap-2 px-4 sm:px-8 pt-4 sm:pt-6 pb-3 sm:pb-4 border-b border-indigo-500/20 overflow-x-auto flex-shrink-0 scrollbar-hide">
-          {(project.cat === 'dev' ? ['overview', 'code', 'details'] : ['overview', 'details']).map((tab) => (
+          {(project.cat === 'dev' ? ['overview', 'details'] : ['overview', 'details']).map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
@@ -182,7 +168,19 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                     title="GitHub Repository"
                   >
                     <FaGithub className="text-base sm:text-lg" />
-                    <span>GitHub</span>
+                    <span>{project.githubLinkBackend ? 'Frontend' : 'GitHub'}</span>
+                  </a>
+                )}
+                {project.githubLinkBackend && (
+                  <a
+                    href={project.githubLinkBackend}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 bg-slate-800 hover:bg-slate-700 text-white px-4 py-2.5 sm:py-2 rounded-lg font-bold uppercase tracking-widest text-[10px] sm:text-xs transition-all text-center border border-purple-500/30 flex items-center justify-center gap-2"
+                    title="Backend Repository"
+                  >
+                    <FaGithub className="text-base sm:text-lg" />
+                    <span>Backend</span>
                   </a>
                 )}
               </div>
@@ -245,32 +243,6 @@ export default function ProjectModal({ project, isOpen, onClose }) {
                       allowFullScreen
                     />
                   </div>
-                </div>
-              )}
-            </div>
-          ) : activeTab === 'code' ? (
-            <div className="space-y-3 sm:space-y-4">
-              <div className="flex justify-between items-center">
-                <h3 className="text-indigo-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest">Code</h3>
-                <button
-                  onClick={copyToClipboard}
-                  className={`px-2 sm:px-3 py-1 rounded text-[10px] sm:text-xs font-bold uppercase tracking-widest transition-all cursor-pointer ${
-                    copiedCode
-                      ? 'bg-green-600/30 text-green-300'
-                      : 'bg-slate-800 text-slate-300 hover:bg-slate-700'
-                  }`}
-                >
-                  {copiedCode ? '✓ Copied' : 'Copy'}
-                </button>
-              </div>
-              <div className="bg-slate-950 border border-indigo-500/30 rounded-lg p-3 sm:p-4 overflow-x-auto max-h-48 sm:max-h-64">
-                <pre className="text-[10px] sm:text-xs text-slate-300 font-mono leading-tight">
-                  <code className="text-indigo-300">{project.code}</code>
-                </pre>
-              </div>
-              {project.codeExplanation && (
-                <div className="bg-indigo-600/10 border border-indigo-500/30 rounded-lg p-3">
-                  <p className="text-indigo-300 text-[10px] sm:text-xs leading-relaxed">{project.codeExplanation}</p>
                 </div>
               )}
             </div>
